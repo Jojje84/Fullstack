@@ -1,0 +1,141 @@
+/* style.css */
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: var(--font);
+  background-color: #f5f5f5;
+  color: var(--textcolordarkwhite);
+  padding: 150px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+header {
+  flex: 0 0 15%;
+  display: flex;
+  height: 170px;
+}
+
+.headbox {
+  flex: 1;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.headbox:first-child {
+  border-right: 1px solid var(--backgroundbody1);
+  flex-basis: 35%;
+  background-color: var(--backgroundbody1);
+}
+
+.headbox:last-child {
+  flex-basis: 65%;
+  background-color: var(--backgroundbody);
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  background-color: var(--backgroundbody);
+  overflow: hidden;
+}
+
+.mainbox {
+  flex: 1;
+  padding: 1em;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.mainbox:first-child {
+  flex-basis: 35%;
+  background-color: var(--backgroundbody1);
+  padding: 40px;
+}
+
+.mainbox:last-child {
+  flex-basis: 65%;
+  background-color: #f4f4f4;
+  border-radius: 25px 0 0 25px;
+  border: none solid var(--backgroundbody);
+  color: black;
+  overflow: auto;
+  max-height: 700px;
+}
+
+footer {
+  flex: 0 0 10%;
+  display: flex;
+  height: 170px;
+}
+
+.footerbox {
+  flex: 1;
+  padding: 1em;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 12px;
+}
+
+.footerbox:first-child {
+  border-right: 1px solid var(--backgroundbody1);
+  flex-basis: 35%;
+  background-color: var(--backgroundbody1);
+  padding: 40px;
+}
+
+.footerbox:last-child {
+  flex-basis: 65%;
+  background-color: var(--backgroundbody);
+}
+
+.all {
+  box-shadow: 1px 1px 1200px rgba(0, 0, 0, 0.5);
+}
+
+/* /* /* Flytta till obout me
+form {
+    width: 50px;
+} */
+
+/* 
+input::placeholder {
+    color: #78797a;
+    font-style: italic;
+     
+}  */
+
+/* popout knappar */
+a {
+  color: var(--textcolordarkwhite);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: var(--sizepopbuttoms);
+}
+
+a:hover {
+  color: rgb(72, 72, 231);
+}
+
+/* Olika teckenstorlek */
+#title {
+  font-size: var(--sizeh1title);
+}
+
+#mainboxtitle {
+  font-size: var(--sizeheading);
+}
+
+#texthead {
+  font-size: var(--textsize);
+}
+
+.logos img {
+  width: 40px;
+  height: auto;
+}
