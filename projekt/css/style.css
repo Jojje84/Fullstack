@@ -97,18 +97,6 @@ footer {
   box-shadow: 1px 1px 1200px rgba(0, 0, 0, 0.5);
 }
 
-/* /* /* Flytta till obout me
-form {
-    width: 50px;
-} */
-
-/* 
-input::placeholder {
-    color: #78797a;
-    font-style: italic;
-     
-}  */
-
 /* popout knappar */
 a {
   color: var(--textcolordarkwhite);

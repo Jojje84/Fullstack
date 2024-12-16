@@ -1,4 +1,4 @@
-/* About me css */
+/* Contact me css */
 
 body {
   background-color: var(--backgroundbody);
@@ -6,10 +6,11 @@ body {
   color: var(--textcolordarkwhite);
 }
 
-#mainboxtitle {
-  font-size: var(--sizeheading);
+form {
+  width: 50px;
 }
 
-#texthead {
-  font-size: var(--textsize);
+input::placeholder {
+  color: #78797a;
+  font-style: italic;
 }

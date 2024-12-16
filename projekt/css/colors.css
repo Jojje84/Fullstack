@@ -2,13 +2,13 @@
 
 /* Grund regler */
 :root {
-    --backgroundbody: #234361;
-    --backgroundbody1: #0a192f;
-    --textcolordarkwhite: #f8f8f8;
-    --font: monospace, monospace;
-    --sizeh1title: 50px;
-    --sizeheading: 25px;
-    --sizepopbuttoms: 20px;
-    --textsize: 14px;
-    --textplace: 150px;
-  }
+  --backgroundbody: #234361;
+  --backgroundbody1: #0a192f;
+  --textcolordarkwhite: #f8f8f8;
+  --font: monospace, monospace;
+  --sizeh1title: 50px;
+  --sizeheading: 25px;
+  --sizepopbuttoms: 20px;
+  --textsize: 14px;
+  --textplace: 150px;
+}
