@@ -10,25 +10,70 @@
     <link rel="stylesheet" href="css/contact.css" />
 
     <body>
-      <p>Contact me</p>
-      <form action="#" method="post">
+      <p id="mainboxtitle">Kontakta mig</p>
+      <p>
+        Har du frågor, idéer eller vill samarbeta? Tveka inte att höra av dig!
+        Du kan använda formuläret nedan eller kontakta mig via e-post. Jag
+        svarar oftast inom 24 timmar.
         <br />
-        <!-- Förnamn -->
-        <input type="text" name="name" id="namne" placeholder="First name" />
-        <!-- Efternam  -->
-        <input
-          type="text"
-          name="secondname"
-          id="secondname"
-          placeholder="Second name"
-        />
-        <!-- Email -->
-        <input type="email" name="email" id="email" placeholder="Email" />
-        <!-- meddelande  -->
-        <input type="textarea" placeholder="Message" />
-        <!-- skicka knappen -->
-        <input type="submit" value="send" />
-      </form>
+        <br />
+        📧 E-post: jorgeavilas@icloud.com
+        <br />
+        📞 Telefon: 070-737 08 49
+        <br />
+        🏢 Adress: Exempelvägen 123, 123 45 Stockholm
+      </p>
+      <br />
+      <div class="contact">
+        <form
+          action="mailto:jorgeavilas@icloud.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <div class="form-firstrow">
+            <!-- Förnamn -->
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name..."
+              required
+            />
+
+            <!-- Efternamn  -->
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name..."
+              required
+            />
+          </div>
+
+          <div class="form-secondrow">
+            <!-- email -->
+            <input
+              type="email"
+              id="ename"
+              name="email"
+              placeholder="Your email..."
+              required
+            />
+          </div>
+
+          <!-- meddelande -->
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Write something..."
+            style="height: 200px"
+            required
+          ></textarea>
+
+          <!-- knappen skicka -->
+          <button type="submit" class="button">Send</button>
+        </form>
+      </div>
     </body>
   </head>
 </html>
