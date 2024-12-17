@@ -3,7 +3,7 @@ function openpopupaboutme() {
   window.open(
     "about.html",
     "popupWindow",
-    "width=600,height=500,left=100,top=200"
+    "width=500,height=500,left=100,top=100"
   );
 }
 
@@ -12,7 +12,7 @@ function openpopupcontactme() {
   window.open(
     "contact.html",
     "popupWindow",
-    "width=600,height=700,left=100,top=100"
+    "width=600,height=800,left=100,top=100"
   );
 }
 
