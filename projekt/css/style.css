@@ -1,100 +1,62 @@
-/* style.css */
-
+/* Container */
 body {
-  margin: 0;
+  background-color: white;
+  align-items: center;
+  height: 98vh;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  font-family: var(--font);
-  background-color: #f5f5f5;
-  color: var(--textcolordarkwhite);
-  padding: 300px;
-  box-sizing: border-box;
-  height: 100%;
+  justify-content: center;
 }
-
-header {
-  flex: 0 0 15%;
+.container {
   display: flex;
-  height: 170px;
-}
-
-.headbox {
-  flex: 1;
-  padding: 1em;
-  box-sizing: border-box;
-}
-
-.headbox:first-child {
-  border-right: 1px solid var(--backgroundbody1);
-  flex-basis: 35%;
+  flex-direction: row;
   background-color: var(--backgroundbody1);
+  color: var(--textcolordarkwhite);
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 25px;
 }
 
-.headbox:last-child {
-  flex-basis: 65%;
-  background-color: var(--backgroundbody);
-  text-align: center;
-}
-
+/* Main */
 main {
   flex: 1;
   display: flex;
-  background-color: var(--backgroundbody);
-  overflow: hidden;
+  align-items: center;
+  font-family: var(--font);
+  flex-direction: row; /* Lägger wrappers bredvid varandra */
+  box-shadow: 10px 10px 500px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
 }
 
-.mainbox {
-  flex: 1;
-  padding: 1em;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.mainbox:first-child {
-  flex-basis: 35%;
-  background-color: var(--backgroundbody1);
-  padding: 40px;
-}
-
-.mainbox:last-child {
-  flex-basis: 65%;
-  background-color: #f4f4f4;
-  border-radius: 25px 0 0 25px;
-  border: none solid var(--backgroundbody);
-  color: black;
-  overflow: auto;
-  max-height: 700px;
-}
-
-footer {
-  flex: 0 0 10%;
+/* Första wrapper */
+.main-content-wrapper {
   display: flex;
-  height: 170px;
-}
-
-.footerbox {
-  flex: 1;
-  padding: 1em;
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 12px;
-}
-
-.footerbox:first-child {
-  border-right: 1px solid var(--backgroundbody1);
-  flex-basis: 35%;
+  flex-direction: column;
   background-color: var(--backgroundbody1);
-  padding: 40px;
+
+  flex-basis: 35%;
+  border-radius: 25%;
+
+  width: 60%;
+  max-width: 700px;
 }
 
-.footerbox:last-child {
-  flex-basis: 65%;
-  background-color: var(--backgroundbody);
+/* Introduktion */
+.intro-section {
+  padding: 20px 40px;
+  background-color: var(--backgroundbody1);
+  color: var(--textcolordarkwhite);
+  border-radius: 25px 0 0 0;
+
+  padding-top: 200px;
+  padding-bottom: 50px;
 }
 
-.all {
-  box-shadow: 1px 1px 1200px rgba(0, 0, 0, 0.5);
+#mainboxtitle {
+  font-size: var(--sizeheading);
+}
+
+#texthead {
+  font-size: var(--textsize);
 }
 
 /* popout knappar */
@@ -110,20 +72,190 @@ a:hover {
   color: rgb(72, 72, 231);
 }
 
-/* Olika teckenstorlek */
-#title {
-  font-size: var(--sizeh1title);
+/* Footer */
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--backgroundbody1);
+  padding-top: 100px;
+  padding-bottom: 20px;
+  border-radius: 0 0 0 25px;
 }
 
-#mainboxtitle {
-  font-size: var(--sizeheading);
-}
-
-#texthead {
-  font-size: var(--textsize);
-}
-
-.logos img {
-  width: 40px;
+.footer-left img {
+  width: 30px;
   height: auto;
+}
+
+.footer-left img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.footer-right {
+  text-align: center;
+  font-size: 12px;
+  color: var(--textcolordarkwhite);
+}
+
+/* Andra wrapper */
+.second-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--backgroundbody);
+  flex-basis: 65%;
+  overflow: auto;
+  max-height: 820px;
+  border-radius: 0px 25px 25px 0px;
+}
+
+/* Tidslinje */
+.timeline-section {
+  padding: 20px;
+  background-color: #f4f4f4;
+
+  overflow-y: auto;
+  padding-top: 100px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  color: black;
+  font-size: 10px;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+#timelinetitle {
+  font-size: var(--sizeheading);
+  padding-left: 30px;
+  color: black;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 10px 34px;
+  background-color: inherit;
+  width: 40%;
+}
+
+/* Cirklarna på tidslinjen */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -20px;
+  background-color: white;
+  border: 4px solid #43f35b4d;
+  top: 25px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left {
+  left: 0%;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+/* Lägg till pilar på vänstra behållaren (pekar åt höger) */
+.timeline-item.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 30px;
+  width: 0;
+  z-index: 1;
+  right: 25px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Lägg till pilar på högra behållaren (pekar åt vänster) */
+.timeline-item.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 30px;
+  width: 0;
+  z-index: 1;
+  left: 25px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.timeline-item .content {
+  background-color: white;
+  border-radius: 25px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.timeline-item:hover .content {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Korrigera cirkeln för behållare på höger sida */
+.right::after {
+  left: -16px;
+}
+
+#timelinehr {
+  height: 5px;
+  width: 90%;
+  border: none;
+  background-color: var(--backgroundbody);
+  border-radius: 25px;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 20px;
+  background-color: var(--backgroundbody1);
+  color: var(--textcolordarkwhite);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills List */
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background-color: var(--backgroundbody);
+  color: var(--textcolordarkwhite);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects */
+.skill:hover {
+  background-color: var(--backgroundbody1);
+  color: var(--textcolordarkwhite);
+  transform: scale(1.05);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
