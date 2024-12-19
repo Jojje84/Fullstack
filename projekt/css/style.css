@@ -14,6 +14,7 @@ body {
   max-width: 1200px;
   width: 100%;
   border-radius: 25px;
+  height: auto;
 }
 
 /* Main */
@@ -25,6 +26,7 @@ main {
   flex-direction: row; /* Lägger wrappers bredvid varandra */
   box-shadow: 10px 10px 500px rgba(0, 0, 0, 0.5);
   border-radius: 25px;
+  background-color: blue;
 }
 
 /* Första wrapper */
@@ -38,6 +40,11 @@ main {
 
   width: 60%;
   max-width: 700px;
+}
+
+.foto {
+  width: 30%;
+  border-radius: 50px;
 }
 
 /* Introduktion */
@@ -106,8 +113,8 @@ a:hover {
   flex-direction: column;
   background-color: var(--backgroundbody);
   flex-basis: 65%;
-  overflow: auto;
-  max-height: 820px;
+  overflow-y: auto;
+  max-height: 970px;
   border-radius: 0px 25px 25px 0px;
 }
 
@@ -125,7 +132,7 @@ a:hover {
   max-width: 100%;
   margin: 0 auto;
   color: black;
-  font-size: 10px;
+  font-size: 12px;
 }
 .timeline::after {
   content: "";
