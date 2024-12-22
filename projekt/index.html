@@ -7,175 +7,269 @@
     <title>Presentation - Jorge Avila</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/colors.css" />
+    <link rel="stylesheet" href="css/popup.css" />
   </head>
   <body>
-    <div class="container">
-      <main>
-        <!-- Första wrapper -->
-        <div class="main-content-wrapper">
-          <!-- Introduktion -->
-          <section class="intro-section">
-            <!-- foto -->
-            <img class="foto" src="assets/foto.jpg" alt="profil" />
-            <p id="mainboxtitle">Hi, I am Jorge Avila</p>
-            <hr />
-            <p id="texthead">
-              I am a curious and hardworking person who thrives in dynamic
-              environments. With a passion for "problem-solving, technology, and
-              teamwork", I enjoy taking on challenges and finding innovative
-              solutions.
-            </p>
-            <p id="texthead">
-              In my free time, I like "exploring new places, and learning new
-              technologies". I believe in continuous learning and growth, and I
-              strive to make a positive impact wherever I go.
-            </p>
-            <br />
-            <br />
-            <a href="javascript:void(0)" onclick="openpopupaboutme()"
-              >About me</a
-            >
-            <br />
-            <br />
-            <a href="javascript:void(0)" onclick="openpopupcontactme()"
-              >Contact me</a
-            >
-          </section>
+    <div id="popup-aboutme" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopupAboutMe()">&times;</span>
+        <br />
+        <p id="mainboxtitle">About me</p>
+        <hr />
+        <p id="texthead">
+          I have been working in the development of various companies for 8
+          years at the same tima as contraction of system. It is a job that I
+          enjoy very well, but I feel ready to take another step in my career.
+          Johnson & Johnson is also a company that I have heard very well about,
+          which causes my interest in working with you.
+        </p>
+        <p id="texthead">
+          In my current experience I have been responsible for some 10 projects
+          with 10 - 140 people involved. A typical project includes people from
+          several departments of the company, for example. Sellers, designers
+          and it-designers as well as representatives from our customers, mainly
+          in financial services and insurance. I am an educated economist, and
+          previously worked as a production developer, avd have deep expertise
+          in economics and development. During my previous, i have attended
+          courses in project management, finance, communication and leadership,
+          witch have helped me feel secure in my previous role, although of
+          course i can develop further witch I am sure I can do with in the
+          company.
+        </p>
+      </div>
+    </div>
+    <div id="popup-contact" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopupContact()">&times;</span>
+        <br />
+        <p id="mainboxtitle">Kontakta mig</p>
+        <p>
+          Har du frågor, idéer eller vill samarbeta? Tveka inte att höra av dig!
+          Du kan använda formuläret nedan eller kontakta mig via e-post. Jag
+          svarar oftast inom 24 timmar.
+          <br />
+          <br />
+          📧 E-post: jorgeavilas@icloud.com
+          <br />
+          📞 Telefon: 070-737 08 49
+          <br />
+          🏢 Adress: Exempelvägen 123, 123 45 Stockholm
+        </p>
+        <br />
+        <div class="contact">
+          <form
+            action="mailto:jorgeavilas@icloud.com"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="form-firstrow">
+              <!-- Förnamn -->
+              <input
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Your name..."
+                required
+              />
 
-          <!-- Footer -->
-          <div class="footer-wrapper">
-            <div class="footer-left">
-              <img src="assets/images/icons8-facebook-64.png" alt="Facebook" />
-              <img src="assets/images/icons8-linkedin-64.png" alt="Linkedin" />
-              <img src="assets/images/icons8-youtube-64.png" alt="Youtube" />
-              <img
-                src="assets/images/icons8-instagram-64.png"
-                alt="instagram"
+              <!-- Efternamn  -->
+              <input
+                type="text"
+                id="lname"
+                name="lastname"
+                placeholder="Your last name..."
+                required
               />
             </div>
-            <div class="footer-right">
-              <p>Thanks for reading. Have a nice <span id="day">day</span>!</p>
-              <p>Copyright © Jorge Avila</p>
+
+            <div class="form-secondrow">
+              <!-- email -->
+              <input
+                type="email"
+                id="ename"
+                name="email"
+                placeholder="Your email..."
+                required
+              />
             </div>
-          </div>
+
+            <!-- meddelande -->
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Write something..."
+              style="height: 200px"
+              required
+            ></textarea>
+
+            <!-- knappen skicka -->
+            <button type="submit" class="button">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section class="container">
+      <!-- Första wrapper -->
+      <div class="main-content-wrapper">
+        <!-- Introduktion -->
+        <div class="intro-bild">
+          <!-- foto -->
+          <img class="foto" src="assets/foto.jpg" alt="profil" />
+        </div>
+        <div class="intro-section">
+          <p id="mainboxtitle">Hi, I am Jorge Avila</p>
+          <hr />
+          <p id="texthead">
+            I am a curious and hardworking person who thrives in dynamic
+            environments. With a passion for "problem-solving, technology, and
+            teamwork", I enjoy taking on challenges and finding innovative
+            solutions.
+          </p>
+          <p id="texthead">
+            In my free time, I like "exploring new places, and learning new
+            technologies". I believe in continuous learning and growth, and I
+            strive to make a positive impact wherever I go.
+          </p>
+          <p id="texthead">Do you want to now more, please klick under!!!</p>
+          <br />
+          <a href="javascript:void(0)" onclick="openpopupaboutme()">About me</a>
+          <br />
+          <br />
+          <a href="javascript:void(0)" onclick="openpopupcontact()"
+            >Contact me</a
+          >
         </div>
 
-        <!-- Andra wrapper -->
-        <div class="second-content-wrapper">
-          <!-- Tidslinje -->
-          <section class="timeline-section">
-            <!-- Kompetenser -->
-            <p id="timelinetitle">Skills</p>
-            <ul class="skills">
-              <li class="skill">Strategy</li>
-              <li class="skill">Scrum</li>
-              <li class="skill">Python</li>
-              <li class="skill">Strategic Planning</li>
-              <li class="skill">Sales</li>
-            </ul>
-            <br />
-            <hr id="timelinehr" />
-            <br />
-            <p id="timelinetitle">Experience</p>
-            <div class="timeline">
-              <!-- Inturm -->
-              <div class="timeline-item left">
-                <div class="content">
-                  <h2>2023 - Now</h2>
-                  <p>Intrum</p>
-                  <p>Service Delivery Manager</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
-              </div>
-              <!-- Santander -->
-              <div class="timeline-item right">
-                <div class="content">
-                  <h2>2022</h2>
-                  <p>Santander Consumer Bank</p>
-                  <p>Customer Service Representative</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
-              </div>
-              <!-- Conteo -->
-              <div class="timeline-item left">
-                <div class="content">
-                  <h2>2015-2021</h2>
-                  <p>Conteo - Hydia</p>
-                  <p>Founder, CEO at Conteo</p>
-                  <p>Stockholm, Sverige - Norway</p>
-                </div>
-              </div>
-              <!-- Newcoast -->
-              <div class="timeline-item right">
-                <div class="content">
-                  <h2>2015-2018</h2>
-                  <p>Newcoast AB</p>
-                  <p>Vice VD - Consultant Manager</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
-              </div>
-              <!-- Insuroo -->
-              <div class="timeline-item left">
-                <div class="content">
-                  <h2>2011 - 2013</h2>
-                  <p>Insuroo AB</p>
-                  <p>Sales Management/Shares owner</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
-              </div>
-              <!-- Företagskronan -->
-              <div class="timeline-item right">
-                <div class="content">
-                  <h2>2012</h2>
-                  <p>Företagskronan AB</p>
-                  <p>Marketing</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
-              </div>
-              <!--Insplanet -->
-              <div class="timeline-item left">
-                <div class="content">
-                  <h2>2009 -2010</h2>
-                  <p>Insplanet</p>
-                  <p>Insurance Broker</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
-              </div>
-              <!-- CreditService -->
-              <div class="timeline-item right">
-                <div class="content">
-                  <h2>2009 - 2010</h2>
-                  <p>CreditService (rebranded to MyLoan)</p>
-                  <p>Sales Management</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
-              </div>
-              <!-- ServiceFinder -->
-              <div class="timeline-item left">
-                <div class="content">
-                  <h2>2007 -2009</h2>
-                  <p>ServiceFinder</p>
-                  <p>Sales Management</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
-              </div>
-              <!-- Telenor -->
-              <div class="timeline-item right">
-                <div class="content">
-                  <h2>2005 - 2006</h2>
-                  <p>Telenor</p>
-                  <p>Salescoach</p>
-                  <p>Stockholm, Sverige</p>
-                </div>
+        <!-- Footer -->
+        <div class="footer-wrapper">
+          <div class="footer-up">
+            <img src="assets/images/facebook.png" alt="Facebook" />
+            <img src="assets/images/linkedin.png" alt="Linkedin" />
+            <img src="assets/images/youtube.png" alt="Youtube" />
+            <img src="assets/images/instagram.png" alt="instagram" />
+          </div>
+          <div class="footer-down">
+            <p>Thanks for reading. Have a nice <span id="day">day</span>!</p>
+            <p>Copyright © Jorge Avila</p>
+          </div>
+        </div>
+      </div>
+      <!-- Andra wrapper -->
+      <div class="second-content-wrapper">
+        <!-- Tidslinje -->
+        <section class="timeline-section">
+          <!-- Kompetenser -->
+          <p id="timelinetitle">Skills</p>
+          <ul class="skills">
+            <li class="skill">Strategy</li>
+            <li class="skill">Scrum</li>
+            <li class="skill">Python</li>
+            <li class="skill">Strategic Planning</li>
+            <li class="skill">Sales</li>
+          </ul>
+          <br />
+          <hr id="timelinehr" />
+          <br />
+          <p id="timelinetitle">Experience</p>
+          <div class="timeline">
+            <!-- Inturm -->
+            <div class="timeline-item left">
+              <div class="content">
+                <h2>2023 - Now</h2>
+                <p>Intrum</p>
+                <p>Service Delivery Manager</p>
+                <p>Stockholm, Sverige</p>
               </div>
             </div>
-            <br />
-            <hr id="timelinehr" />
-            <br />
-          </section>
-        </div>
-      </main>
-    </div>
+            <!-- Santander -->
+            <div class="timeline-item right">
+              <div class="content">
+                <h2>2022</h2>
+                <p>Santander Consumer Bank</p>
+                <p>Customer Service Representative</p>
+                <p>Stockholm, Sverige</p>
+              </div>
+            </div>
+            <!-- Conteo -->
+            <div class="timeline-item left">
+              <div class="content">
+                <h2>2015-2021</h2>
+                <p>Conteo - Hydia</p>
+                <p>Founder, CEO at Conteo</p>
+                <p>Stockholm, Sverige - Norway</p>
+              </div>
+            </div>
+            <!-- Newcoast -->
+            <div class="timeline-item right">
+              <div class="content">
+                <h2>2015-2018</h2>
+                <p>Newcoast AB</p>
+                <p>Vice VD - Consultant Manager</p>
+                <p>Stockholm, Sverige</p>
+              </div>
+            </div>
+            <!-- Insuroo -->
+            <div class="timeline-item left">
+              <div class="content">
+                <h2>2011 - 2013</h2>
+                <p>Insuroo AB</p>
+                <p>Sales Management/Shares owner</p>
+                <p>Stockholm, Sverige</p>
+              </div>
+            </div>
+            <!-- Företagskronan -->
+            <div class="timeline-item right">
+              <div class="content">
+                <h2>2012</h2>
+                <p>Företagskronan AB</p>
+                <p>Marketing</p>
+                <p>Stockholm, Sverige</p>
+              </div>
+            </div>
+            <!--Insplanet -->
+            <div class="timeline-item left">
+              <div class="content">
+                <h2>2009 -2010</h2>
+                <p>Insplanet</p>
+                <p>Insurance Broker</p>
+                <p>Stockholm, Sverige</p>
+              </div>
+            </div>
+            <!-- CreditService -->
+            <div class="timeline-item right">
+              <div class="content">
+                <h2>2009 - 2010</h2>
+                <p>CreditService (rebranded to MyLoan)</p>
+                <p>Sales Management</p>
+                <p>Stockholm, Sverige</p>
+              </div>
+            </div>
+            <!-- ServiceFinder -->
+            <div class="timeline-item left">
+              <div class="content">
+                <h2>2007 -2009</h2>
+                <p>ServiceFinder</p>
+                <p>Sales Management</p>
+                <p>Stockholm, Sverige</p>
+              </div>
+            </div>
+            <!-- Telenor -->
+            <div class="timeline-item right">
+              <div class="content">
+                <h2>2005 - 2006</h2>
+                <p>Telenor</p>
+                <p>Salescoach</p>
+                <p>Stockholm, Sverige</p>
+              </div>
+            </div>
+          </div>
+          <br />
+          <hr id="timelinehr" />
+          <br />
+        </section>
+      </div>
+    </section>
     <script src="js/script.js"></script>
   </body>
 </html>

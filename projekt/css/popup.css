@@ -1,0 +1,148 @@
+
+body .popup {
+    position: fixed; /* Popup ska inte påverkas av body flex-egenskaper */
+  }
+  /* Popup-overlay */
+  .popup {
+    display: none; /* Dölj popup som standard */
+    position: fixed; /* Popup placeras relativt till viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Täcker hela skärmen horisontellt */
+    height: 100vh; /* Täcker hela skärmen vertikalt */
+    background: rgba(0, 0, 0, 0.7); /* Halvtransparent bakgrund */
+    z-index: 9999; /* Säkerställ att popupen ligger över ALLT annat */
+    justify-content: center; /* Centrera horisontellt */
+    align-items: center; /* Centrera vertikalt */
+    overflow: hidden;
+  }
+  
+  /* Popup-innehåll */
+  .popup-content {
+    background: var(--backgroundbody1);
+    color: var(--textcolordarkwhite);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px; /* Begränsa bredd */
+    width: 90%; /* Anpassa till mindre skärmar */
+    max-height: 80vh; /* Begränsa höjd */
+    overflow-y: auto; /* Scrollbar om texten är för lång */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: popupFadeIn 0.3s ease-in-out;
+    text-align: left;
+    position: relative;
+    z-index: 10000; /* Säkerställ att popup-innehållet ligger överst */
+    font-family: var(--font);
+  }
+  
+  /* Stängningsknapp */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--textcolordarkwhite);
+    z-index: 10001;
+  }
+  
+  .close-btn:hover {
+    color: red;
+  }
+  
+  /* Popup-animation */
+  @keyframes popupFadeIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+.contact {
+    width: 100%;
+    max-width: 400px; /* Begränsa bredden */
+    margin: 0 auto; /* Centrera formuläret */
+    padding: 20px;
+    background-color: #1f3b57; /* Mörk bakgrund */
+    border-radius: 25px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Avstånd mellan element */
+  }
+  
+  .form-firstrow {
+    display: flex;
+    gap: 10px; /* Avstånd mellan fälten */
+  }
+  
+  .form-firstrow input {
+    flex: 1; /* Gör fälten lika stora */
+    border: none;
+    padding: 10px;
+    background-color: #eaeaea; /* Ljus bakgrund */
+    font-style: italic;
+  }
+  
+  .form-firstrow input:first-child {
+    border-radius: 25px 0 0; /* förnamn kant */
+  }
+  
+  .form-firstrow input:last-child {
+    border-radius: 0 25px 0 0; /* efternamn kant */
+  }
+  
+  .form-secondrow {
+    display: flex;
+    gap: 10px; /* Avstånd mellan fälten */
+  }
+  
+  .form-secondrow input {
+    flex: 1; /* Gör fälten lika stora */
+    border: none;
+    padding: 10px;
+    background-color: #eaeaea; /* Ljus bakgrund */
+    border-radius: 0;
+    font-style: italic;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: none;
+    box-sizing: border-box;
+    background-color: #eaeaea; /* Ljus bakgrund */
+    font-style: italic;
+  }
+  
+  textarea {
+    height: 150px; /* Höjd på textrutan */
+    resize: none; /* Förhindrar användare från att ändra storlek */
+  }
+  
+  .button {
+    background-color: #4caf50; /* Grön knapp */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 0 0 25px 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .button:hover {
+    background-color: #45a049; /* Mörkare grön vid hover */
+  }
+  
+  #mainboxtitle {
+    font-size: var(--sizeheading);
+  }
+  

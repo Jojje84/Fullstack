@@ -1,19 +1,20 @@
-//popout om mig
+
+// Öppna popup
 function openpopupaboutme() {
-  window.open(
-    "about.html",
-    "popupWindow",
-    "width=500,height=500,left=100,top=100"
-  );
+  document.getElementById("popup-aboutme").style.display = "flex";
 }
 
-//popout kontakta mig
-function openpopupcontactme() {
-  window.open(
-    "contact.html",
-    "popupWindow",
-    "width=600,height=800,left=100,top=100"
-  );
+function openpopupcontact() {
+  document.getElementById("popup-contact").style.display = "flex";
+}
+
+// Stäng popup
+function closePopupAboutMe() {
+  document.getElementById("popup-aboutme").style.display = "none";
+}
+
+function closePopupContact() {
+  document.getElementById("popup-contact").style.display = "none";
 }
 
 //dagar hälsning
