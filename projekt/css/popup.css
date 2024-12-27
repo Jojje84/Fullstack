@@ -1,13 +1,11 @@
 
-body .popup {
-    position: fixed; /* Popup ska inte påverkas av body flex-egenskaper */
-  }
+
   /* Popup-overlay */
+
+  /* about me */
   .popup {
     display: none; /* Dölj popup som standard */
     position: fixed; /* Popup placeras relativt till viewport */
-    top: 0;
-    left: 0;
     width: 100vw; /* Täcker hela skärmen horisontellt */
     height: 100vh; /* Täcker hela skärmen vertikalt */
     background: rgba(0, 0, 0, 0.7); /* Halvtransparent bakgrund */
@@ -22,16 +20,11 @@ body .popup {
     background: var(--backgroundbody1);
     color: var(--textcolordarkwhite);
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 25px;
     max-width: 600px; /* Begränsa bredd */
-    width: 90%; /* Anpassa till mindre skärmar */
-    max-height: 80vh; /* Begränsa höjd */
-    overflow-y: auto; /* Scrollbar om texten är för lång */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: popupFadeIn 0.3s ease-in-out;
-    text-align: left;
     position: relative;
-    z-index: 10000; /* Säkerställ att popup-innehållet ligger överst */
     font-family: var(--font);
   }
   
@@ -145,4 +138,12 @@ body .popup {
   #mainboxtitle {
     font-size: var(--sizeheading);
   }
-  
+  @media only screen and (max-width: 932px) {
+    .popup-content {
+      padding: 30px;
+      width: 30vh;
+    }
+    .contact {
+      padding: 0;
+    }
+  }
