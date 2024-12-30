@@ -11,10 +11,18 @@
   </head>
   <body>
     <nav class="mobile-nav">
-      <a href="#intro">Home</a>
-      <a href="javascript:void(0)" onclick="openpopupaboutme()">About me</a>
-      <a href="#timelinetitle">timeline</a>
-      <a href="javascript:void(0)" onclick="openpopupcontact()">Contact me</a>
+      <button onclick="window.location.href='#main'">Home</button>
+      <button onclick="openpopupaboutme()">About</button>
+      <div class="dropdown">
+        <button class="dropbtn">timeline ☰</button>
+        <div class="dropdown-content">
+          <button onclick="window.location.href='#skills'">skills</button>
+          <button onclick="window.location.href='#experience'">
+            Experience
+          </button>
+        </div>
+      </div>
+      <button onclick="openpopupcontact()">Contact</button>
     </nav>
     <div id="popup-aboutme" class="popup">
       <div class="popup-content">
@@ -120,9 +128,11 @@
 
     <section class="container">
       <!-- Första wrapper -->
-      <div class="main-content-wrapper" id="intro"> <!-- adderat intro för mobile -->
+      <div class="main-content-wrapper" id="intro">
+        <!-- adderat intro för mobile -->
         <!-- Introduktion -->
-        <div class="intro-bild" >
+        <section id="main"></section>
+        <div class="intro-bild">
           <!-- foto -->
           <img class="foto" src="assets/foto.jpg" alt="profil" />
         </div>
@@ -140,7 +150,9 @@
             technologies". I believe in continuous learning and growth, and I
             strive to make a positive impact wherever I go.
           </p>
-          <p id="texthead" class="messagetext">Do you want to now more, please klick under!!!</p>
+          <p id="texthead" class="messagetext">
+            Do you want to now more, please klick under!!!
+          </p>
           <br />
 
           <a href="javascript:void(0)" onclick="openpopupaboutme()">About me</a>
@@ -170,6 +182,9 @@
         <!-- Tidslinje -->
         <section class="timeline-section">
           <!-- Kompetenser -->
+          <br />
+          <br />
+          <section id="skills"></section>
           <p id="timelinetitle">Skills</p>
           <ul class="skills">
             <li class="skill">Strategy</li>
@@ -178,9 +193,11 @@
             <li class="skill">Strategic Planning</li>
             <li class="skill">Sales</li>
           </ul>
+
+          <br />
           <br />
           <hr id="timelinehr" />
-          <br />
+          <section id="experience"></section>
           <p id="timelinetitle">Experience</p>
           <div class="timeline">
             <!-- Inturm -->
@@ -283,4 +300,3 @@
     <script src="js/script.js"></script>
   </body>
 </html>
-    

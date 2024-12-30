@@ -6,9 +6,97 @@ body {
   display: flex;
   justify-content: center;
 }
+/* === NAVIGATION CONTAINER === */
 .mobile-nav {
-  display: none;
+  display: none; /* Horisontell layout */
+  justify-content: flex-start; /* Justera innehåll till vänster */
+  align-items: center; /* Centrera vertikalt */
+  gap: 10px; /* Avstånd mellan knappar */
+  padding: 10px 20px; /* Lägg till lite utrymme */
+  margin: 0;
+  list-style-type: none; /* Ta bort punkter */
+  overflow: visible; /* Säkerställ att dropdown visas korrekt */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Säkerställ att menyn ligger över andra element */
+  background: rgba(0, 0, 0, 0.2); /* Transparent mörk bakgrund */
+  backdrop-filter: blur(10px); /* Suddig bakgrund */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till skugga */
 }
+
+/* === KNAPPAR === */
+.mobile-nav button,
+.dropbtn {
+  color: white; /* Vit text */
+  text-align: center; /* Centrera texten */
+  padding: 14px 16px; /* Utrymme inuti knappar */
+  text-decoration: none; /* Ta bort understrykning */
+  border: none; /* Ingen kantlinje */
+  background: none; /* Ingen bakgrund */
+  cursor: pointer; /* Pekare ändras till hand */
+  font-family: Arial, sans-serif; /* Standardtypsnitt */
+  font-size: 14px; /* Textstorlek */
+  transition: background-color 0.3s ease-in-out; /* Smidig övergång */
+}
+
+/* === HOVER EFFEKT FÖR KNAPPAR === */
+.mobile-nav button:hover,
+.dropbtn:hover {
+  background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent röd bakgrund */
+}
+
+/* === DROPDOWN === */
+.dropdown {
+  position: relative; /* För att dropdown ska vara relativ till knappen */
+  display: inline-block;
+  z-index: 1500; /* Säkerställ att dropdown ligger över andra element */
+}
+
+/* === DROPDOWN-INNEHÅLL === */
+.dropdown-content {
+  display: none; /* Dölj som standard */
+  position: absolute;
+  top: 100%; /* Placera precis under knappen */
+  left: 0; /* Börja från vänster */
+  background: rgba(249, 249, 249, 0.95); /* Ljus, transparent bakgrund */
+  backdrop-filter: blur(8px); /* Suddig bakgrund */
+  min-width: 160px; /* Standardbredd för dropdown */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Skugga för dropdown */
+  z-index: 1001; /* Placera över andra element */
+  border-radius: 4px; /* Rundade hörn */
+  overflow: hidden; /* Förhindra överflöd */
+}
+
+/* === DROPDOWN-KNAPPAR === */
+.dropdown-content button {
+  color: black; /* Textfärg */
+  padding: 12px 16px; /* Utrymme */
+  text-decoration: none; /* Ta bort understrykning */
+  display: block; /* En knapp per rad */
+  text-align: left; /* Vänsterjusterad text */
+  background: none; /* Ingen bakgrund */
+  border: none; /* Ingen kantlinje */
+  width: 100%; /* Fyll dropdown bredden */
+  cursor: pointer; /* Handpekare */
+  font-size: 14px; /* Textstorlek */
+  transition: background-color 0.2s ease-in-out; /* Smidig övergång */
+}
+
+/* === HOVER FÖR DROPDOWN-KNAPPAR === */
+.dropdown-content button:hover {
+  background-color: #f1f1f1; /* Ljusgrå bakgrund vid hover */
+}
+
+/* === VISA DROPDOWN VID HOVER === */
+.dropdown:hover .dropdown-content {
+  display: block; /* Visa dropdown vid hover */
+}
+section {
+  scroll-margin-top: 80px;
+}
+
 .container {
   display: flex;
   background-color: var(--backgroundbody1);
@@ -17,7 +105,6 @@ body {
   max-height: 900px;
   width: 100%;
   font-family: var(--font);
-  border-radius: 25px;
   overflow: hidden;
   box-shadow: 2px 2px 50px rgb(104, 103, 103), -2px -2px 50px rgb(104, 103, 103);
 }
@@ -154,7 +241,7 @@ body {
   position: absolute;
   width: 25px;
   height: 25px;
-  right: -10px;
+  right: -15px;
   background-color: white;
   border: 4px solid #43f35b4d;
   top: 25px;
@@ -163,7 +250,7 @@ body {
 }
 
 .timeline-item.left {
-  left: -0%;
+  left: -1%;
 }
 
 .timeline-item.right {
@@ -264,34 +351,6 @@ body {
 
   .mobile-nav {
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
-    position: fixed;
-    top: 0px; /* Avstånd från toppen */
-    right: 0px; /* Avstånd från högerkant */
-    left: 0px;
-    z-index: 1000; /* Se till att menyn ligger över andra element */
-    backdrop-filter: blur(30px);
-    padding: 10px;
-    gap: 10px;
-    box-shadow: 0 0px 30px rgba(227, 228, 237, 0.37);
-    border: 2px solid rgba(255, 255, 255, 0.18);
-  }
-
-  .mobile-nav a {
-    display: block;
-    margin: 5px 0px;
-    text-align: right; /* Justera texten till höger */
-    padding: 8px 12px;
-    font-size: 12px;
-    font-family: var(--font);
-    background-color: var(--backgroundbody1);
-    color: var(--textcolordarkwhite);
-    border-radius: 10px;
-    text-decoration: none;
-    border: 1px solid var(--textcolordarkwhite);
-    white-space: nowrap; /* Förhindra textbrytning */
   }
 
   .container {
@@ -355,12 +414,14 @@ body {
     right: 25px;
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
+    display: none;
   }
 
   .timeline-item.right::before {
     left: 25px;
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent white;
+    display: none;
   }
 }
 
@@ -371,46 +432,22 @@ body {
     padding: 0;
     margin: 0;
   }
+  .mobile-nav {
+    display: flex;
+  }
   .container {
     border-radius: 0;
     max-width: fit-content;
     max-height: fit-content;
   }
 
-  .mobile-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
-    position: fixed;
-    top: 0px; /* Avstånd från toppen */
-    right: 0px; /* Avstånd från högerkant */
-    left: 0px;
-    z-index: 1000; /* Se till att menyn ligger över andra element */
-    backdrop-filter: blur(30px);
-    padding: 10px;
-    gap: 10px;
-    box-shadow: 0 0px 30px rgba(227, 228, 237, 0.37);
-    border: 2px solid rgba(255, 255, 255, 0.18);
-  }
-  .mobile-nav a {
-    display: block;
-    margin: 5px 0px;
-    text-align: center;
-    padding: 8px 12px;
-    font-size: 12px;
-    font-family: var(--font);
-    background-color: var(--backgroundbody1);
-    color: var(--textcolordarkwhite);
-    border-radius: 10px;
-    text-decoration: none;
-    border: 1px solid var(--textcolordarkwhite);
-    white-space: nowrap; /* Förhindra textbrytning */
-  }
   .intro-section a {
     display: none;
   }
   .messagetext {
     visibility: hidden;
+  }
+  .timeline-item.left {
+    left: -20px;
   }
 }
