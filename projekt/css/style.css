@@ -297,6 +297,9 @@ body {
     flex-direction: column;
     border-radius: 0;
     overflow: auto;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-top: 6%;
   }
 
   .intro-bild {
@@ -311,6 +314,9 @@ body {
     margin-right: 40px;
   }
   .intro-section a {
+    display: none;
+  }
+  .messagetext {
     display: none;
   }
 
@@ -358,14 +364,16 @@ body {
 }
 
 /* tablet */
-@media only screen and (min-width: 768px) and (max-width: 1000px) {
+@media only screen and (min-width: 768px) and (max-width: 969px) {
   body {
     display: block;
+    padding: 0;
     margin: 0;
-    padding: auto;
   }
   .container {
     border-radius: 0;
+    max-width: fit-content;
+    max-height: fit-content;
   }
 
   .mobile-nav {
@@ -400,5 +408,8 @@ body {
   }
   .intro-section a {
     display: none;
+  }
+  .messagetext {
+    visibility: hidden;
   }
 }
