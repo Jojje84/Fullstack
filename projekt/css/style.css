@@ -2,7 +2,7 @@
 body {
   background-color: white;
   align-items: center;
-  min-height: 100vh;
+  min-height: 98vh;
   display: flex;
   justify-content: center;
 }
@@ -88,6 +88,7 @@ body {
 .footer-up img {
   width: 25px;
   height: 25px;
+  margin: 5px;
 }
 
 .footer-up img:hover {
@@ -287,7 +288,7 @@ body {
     font-family: var(--font);
     background-color: var(--backgroundbody1);
     color: var(--textcolordarkwhite);
-    border-radius: 20px;
+    border-radius: 10px;
     text-decoration: none;
     border: 1px solid var(--textcolordarkwhite);
     white-space: nowrap; /* Förhindra textbrytning */
@@ -305,7 +306,7 @@ body {
   .intro-bild {
     justify-content: center;
     align-items: left;
-    margin-top: 15%;
+    margin-top: 12%;
     margin-left: 40px;
   }
 
@@ -363,8 +364,8 @@ body {
   }
 }
 
-/* tablet */
-@media only screen and (min-width: 768px) and (max-width: 969px) {
+/* tablet (not apple/surface/asus*/
+@media only screen and (min-width: 768px) and (max-height: 970px) {
   body {
     display: block;
     padding: 0;
@@ -395,13 +396,13 @@ body {
   .mobile-nav a {
     display: block;
     margin: 5px 0px;
-    text-align: right; /* Justera texten till höger */
+    text-align: center;
     padding: 8px 12px;
     font-size: 12px;
     font-family: var(--font);
     background-color: var(--backgroundbody1);
     color: var(--textcolordarkwhite);
-    border-radius: 20px;
+    border-radius: 10px;
     text-decoration: none;
     border: 1px solid var(--textcolordarkwhite);
     white-space: nowrap; /* Förhindra textbrytning */
@@ -412,4 +413,4 @@ body {
   .messagetext {
     visibility: hidden;
   }
-}   
+}
