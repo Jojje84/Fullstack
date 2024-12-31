@@ -2,13 +2,32 @@
 
 /* Grund regler */
 :root {
-  --backgroundbody: #234361;
-  --backgroundbody1: #0a192f;
-  --textcolordarkwhite: #f8f8f8;
+  /* färg */
+  --backgrounddark: #09243b;
+  --backgroundwhite: white;
+  --backgroundwhite1: rgb(247, 242, 242); /* timeline vit */
   --font: monospace, monospace;
+
+
+  /* knappar */
+  --backgroundblue: #134977;
+
+  /* text storlek */
   --sizeh1title: 50px;
   --sizeheading: 25px;
   --sizepopbuttoms: 20px;
   --textsize: 14px;
   --textplace: 150px;
+  --textsizesmall: 12px;
+  --textsizesmallsmall: 10px;
+
+  /* text färg */
+  --textcolordarkwhite: white;
+
+  /* mobile-nav stående färg */
+  --hovercolor: rgba(9, 36, 59, 0.8); /* mobile-nav hover */
+
+
+  /* mobile-nav backgrund */
+  --backgrundnav: rgba(9, 36, 59, 0.4);
 }

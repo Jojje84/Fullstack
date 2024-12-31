@@ -1,10 +1,11 @@
 /* Container */
 body {
-  background-color: white;
+  background-color: var(--backgroundwhite);
   align-items: center;
   min-height: 98vh;
   display: flex;
   justify-content: center;
+  font-family: var(--font);
 }
 /* === NAVIGATION CONTAINER === */
 .mobile-nav {
@@ -21,8 +22,8 @@ body {
   left: 0;
   right: 0;
   z-index: 1000; /* Säkerställ att menyn ligger över andra element */
-  background: rgba(0, 0, 0, 0.2); /* Transparent mörk bakgrund */
-  backdrop-filter: blur(30px); /* Suddig bakgrund */
+  background: var(--backgrundnav); /* Transparent bakgrund */
+  backdrop-filter: blur(50px); /* Suddig bakgrund */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till skugga */
   border: 2px solid rgba(255, 255, 255, 0.18); /* Vit kantlinje */
 }
@@ -30,7 +31,7 @@ body {
 /* knapparna */
 .mobile-nav button,
 .dropbtn {
-  color: white; /* Vit text */
+  color: var(--textcolordarkwhite); /* Vit text */
   text-align: center; /* Centrera texten */
   padding: 14px 16px; /* Utrymme inuti knappar */
   text-decoration: none; /* Ta bort understrykning */
@@ -38,7 +39,7 @@ body {
   background: none; /* Ingen bakgrund */
   cursor: pointer; /* Pekare ändras till hand */
   font-family: Arial, sans-serif; /* Standardtypsnitt */
-  font-size: 14px; /* Textstorlek */
+  font-size: var(--textsize); /* Textstorlek */
   transition: background-color 0.3s ease-in-out; /* Smidig övergång */
   white-space: nowrap; /* Texten bryts inte */
 }
@@ -46,7 +47,7 @@ body {
 /* hover effekt för knappar */
 .mobile-nav button:hover,
 .dropbtn:hover {
-  background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent röd bakgrund */
+  background-color: var(--hovercolor); /* Semi-transparent bakgrund */
   border-radius: 10px; /* Rundade hörn */
 }
 
@@ -63,7 +64,7 @@ body {
   position: absolute;
   top: 100%; /* Placera precis under knappen */
   left: 0; /* Börja från vänster */
-  background: rgba(0, 0, 0, 0.2); /* Ljus, transparent bakgrund */
+  background: var(--backgrundnav); /* transparent bakgrund */
   backdrop-filter: blur(8px); /* Suddig bakgrund */
   min-width: 160px; /* Standardbredd för dropdown */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Skugga för dropdown */
@@ -75,7 +76,7 @@ body {
 
 /* === DROPDOWN-KNAPPAR === */
 .dropdown-content button {
-  color: white; /* Textfärg */
+  color: var(--textcolordarkwhite); /* Textfärg */
   padding: 12px 16px; /* Utrymme */
   text-decoration: none; /* Ta bort understrykning */
   display: block; /* En knapp per rad */
@@ -84,13 +85,13 @@ body {
   border: none; /* Ingen kantlinje */
   width: 100%; /* Fyll dropdown bredden */
   cursor: pointer; /* Handpekare */
-  font-size: 14px; /* Textstorlek */
+  font-size: var(--textsize); /* Textstorlek */
   transition: background-color 0.2s ease-in-out; /* Smidig övergång */
 }
 
 /* hover för dropdown knappar */
 .dropdown-content button:hover {
-  background-color: rgba(255, 0, 0, 0.7); /* Ljusgrå bakgrund vid hover */
+  background-color: var(--hovercolor); /* Ljusgrå bakgrund vid hover */
   border-radius: 0;
 }
 
@@ -104,12 +105,11 @@ section {
 
 .container {
   display: flex;
-  background-color: var(--backgroundbody1);
+  background-color: var(--backgrounddark);
   color: var(--textcolordarkwhite);
   max-width: 1000px;
   max-height: 900px;
   width: 100%;
-  font-family: var(--font);
   overflow: hidden;
   box-shadow: 2px 2px 50px rgb(104, 103, 103), -2px -2px 50px rgb(104, 103, 103);
   border-radius: 25px;
@@ -125,7 +125,7 @@ section {
 .main-content-wrapper {
   display: flex;
   flex-direction: column;
-  background-color: var(--backgroundbody1);
+  background-color: var(--backgrounddark);
 }
 
 .intro-bild {
@@ -134,6 +134,7 @@ section {
   flex-direction: column; /* Stapla innehållet vertikalt */
   justify-content: flex-end; /* Flytta innehållet längst ner */
   margin-left: 10%;
+  padding-top: 10%;
 }
 
 .foto {
@@ -144,7 +145,7 @@ section {
 /* Introduktion */
 .intro-section {
   flex: 1;
-  background-color: var(--backgroundbody1);
+  background-color: transparent;
   color: var(--textcolordarkwhite);
   margin-left: 10%;
   margin-right: 10%;
@@ -163,7 +164,6 @@ section {
   color: var(--textcolordarkwhite);
   text-decoration: none;
   cursor: pointer;
-  font-family: var(--font);
   font-size: var(--sizepopbuttoms);
 }
 
@@ -174,7 +174,7 @@ section {
 /* Footer */
 .footer-wrapper {
   flex: 0 0 15%;
-  background-color: var(--backgroundbody1);
+  background-color: var(--backgrounddark);
   text-align: center;
 }
 
@@ -190,14 +190,17 @@ section {
 }
 
 .footer-down {
-  font-size: 12px;
+  font-size: var(textsizesmall);
   color: var(--textcolordarkwhite);
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /* Andra wrapper */
 .second-content-wrapper {
   flex: 0 0 65%;
-  background-color: var(--backgroundbody);
+  background-color: var(--backgroundblue);
   overflow-y: auto;
   max-height: fit-content; /* Säkerställ att innehållet inte överlappar */
 }
@@ -205,7 +208,7 @@ section {
 /* Tidslinje */
 .timeline-section {
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: var(--backgroundwhite1);
   overflow-y: auto;
   padding-top: 100px;
 }
@@ -215,14 +218,14 @@ section {
   max-width: 100%;
   margin: 0 auto;
   color: black;
-  font-size: 12px;
+  font-size: var(--textsizesmall);
 }
 /* tidslinje position*/
 .timeline::after {
   content: "";
   position: absolute;
   width: 6px;
-  background-color: white;
+  background-color: var(--backgroundwhite);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -248,7 +251,7 @@ section {
   width: 25px;
   height: 25px;
   right: -15px;
-  background-color: white;
+  background-color: var(--backgroundwhite);
   border: 4px solid #43f35b4d;
   top: 25px;
   border-radius: 50%;
@@ -292,7 +295,7 @@ section {
 }
 
 .timeline-item .content {
-  background-color: white;
+  background-color: var(--backgroundwhite);
   border-radius: 25px;
   padding: 20px;
   position: relative;
@@ -312,13 +315,13 @@ section {
   height: 5px;
   width: 90%;
   border: none;
-  background-color: var(--backgroundbody);
+  background-color: var(--backgroundblue);
   border-radius: 25px;
 }
 
 /* Skills Section */
 .skills-section {
-  background-color: var(--backgroundbody1);
+  background-color: var(--backgrounddark);
   color: var(--textcolordarkwhite);
 }
 
@@ -331,7 +334,7 @@ section {
 }
 
 .skill {
-  background-color: var(--backgroundbody);
+  background-color: var(--backgroundblue);
   color: var(--textcolordarkwhite);
   padding: 10px 20px;
   border-radius: 5px;
@@ -341,7 +344,7 @@ section {
 
 /* Hover effects */
 .skill:hover {
-  background-color: var(--backgroundbody1);
+  background-color: var(--backgrounddark);
   color: var(--textcolordarkwhite);
   transform: scale(1.05);
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -353,7 +356,7 @@ section {
     display: block;
     margin: 0;
     padding: auto;
-    ;
+    background-color: var(--backgrounddark);
   }
 
   .mobile-nav {
@@ -393,7 +396,10 @@ section {
     justify-content: center;
     align-items: center;
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
+  }
+  #copyright {
+    font-size: var(--textsizesmallsmall);
   }
 
   .second-content-wrapper {
@@ -433,12 +439,11 @@ section {
 }
 
 /* tablet (not apple/surface/asus*/
-@media only screen and (min-width: 768px) and (max-height: 970px) {
+@media only screen and (min-width: 767px) and (max-height: 970px) {
   body {
     display: block;
     padding: 0;
     margin: 0;
-
   }
   .mobile-nav {
     display: flex;
@@ -458,4 +463,13 @@ section {
   .timeline-item.left {
     left: -20px;
   }
+}
+
+@media only screen and (min-width: 768px) and (min-height: 971px) and (max-height: 1181px) {
+  
+  .intro-bild {
+    flex: 0 0 15%;
+    flex-direction: column;
+  }
+
 }

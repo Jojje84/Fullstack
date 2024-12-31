@@ -16,7 +16,7 @@
 
 /* Popup-innehåll */
 .popup-content {
-  background: var(--backgroundbody1);
+  background: var(--backgrounddark);
   color: var(--textcolordarkwhite);
   padding: 40px;
   border-radius: 25px;
@@ -24,8 +24,6 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   animation: popupFadeIn 0.3s ease-in-out;
   position: relative;
-  font-family: var(--font);
-  
 }
 
 /* Stängningsknapp */
@@ -53,7 +51,7 @@
   position: absolute;
   width: 15px; /* Längd på linjerna */
   height: 4px; /* Tjocklek på linjerna */
-  background-color: white; /* Färg på linjerna */
+  background-color: var(--backgroundwhite); /* Färg på linjerna */
   transition: all 0.3s ease-in-out;
 }
 
@@ -76,14 +74,17 @@
 /* Roterar linjerna vid hover */
 .close-btn:hover::before {
   transform: rotate(135deg); /* Roterar linjen till nytt läge */
-  background-color: white; /* Säkerställer att färgen förblir vit */
+  background-color: var(
+    --backgroundwhite
+  ); /* Säkerställer att färgen förblir vit */
 }
 
 .close-btn:hover::after {
   transform: rotate(45deg); /* Roterar linjen till nytt läge */
-  background-color: white; /* Säkerställer att färgen förblir vit */
+  background-color: var(
+    --backgroundwhite
+  ); /* Säkerställer att färgen förblir vit */
 }
-
 
 /* Popup-animation */
 @keyframes popupFadeIn {
@@ -154,7 +155,7 @@ textarea {
   border: none;
   border-radius: none;
   box-sizing: border-box;
-  background-color: #eaeaea; /* Ljus bakgrund */
+  background-color: var(--backgroundwhite); /* Ljus bakgrund */
   font-style: italic;
 }
 
@@ -165,7 +166,7 @@ textarea {
 
 .button {
   background-color: #4caf50; /* Grön knapp */
-  color: white;
+  color: var(--textcolordarkwhite);
   padding: 10px;
   border: none;
   border-radius: 0 0 25px 25px;
