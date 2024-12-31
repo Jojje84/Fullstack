@@ -464,7 +464,7 @@ section {
     left: -20px;
   }
 }
-
+/* tablet apple */
 @media only screen and (min-width: 768px) and (min-height: 971px) and (max-height: 1181px) {
   
   .intro-bild {
