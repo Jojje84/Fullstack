@@ -22,11 +22,12 @@ body {
   right: 0;
   z-index: 1000; /* Säkerställ att menyn ligger över andra element */
   background: rgba(0, 0, 0, 0.2); /* Transparent mörk bakgrund */
-  backdrop-filter: blur(10px); /* Suddig bakgrund */
+  backdrop-filter: blur(30px); /* Suddig bakgrund */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till skugga */
+  border: 2px solid rgba(255, 255, 255, 0.18); /* Vit kantlinje */
 }
 
-/* === KNAPPAR === */
+/* knapparna */
 .mobile-nav button,
 .dropbtn {
   color: white; /* Vit text */
@@ -39,12 +40,14 @@ body {
   font-family: Arial, sans-serif; /* Standardtypsnitt */
   font-size: 14px; /* Textstorlek */
   transition: background-color 0.3s ease-in-out; /* Smidig övergång */
+  white-space: nowrap; /* Texten bryts inte */
 }
 
-/* === HOVER EFFEKT FÖR KNAPPAR === */
+/* hover effekt för knappar */
 .mobile-nav button:hover,
 .dropbtn:hover {
   background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent röd bakgrund */
+  border-radius: 10px; /* Rundade hörn */
 }
 
 /* === DROPDOWN === */
@@ -60,10 +63,11 @@ body {
   position: absolute;
   top: 100%; /* Placera precis under knappen */
   left: 0; /* Börja från vänster */
-  background: rgba(249, 249, 249, 0.95); /* Ljus, transparent bakgrund */
+  background: rgba(0, 0, 0, 0.2); /* Ljus, transparent bakgrund */
   backdrop-filter: blur(8px); /* Suddig bakgrund */
   min-width: 160px; /* Standardbredd för dropdown */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Skugga för dropdown */
+  border: 2px solid rgba(255, 255, 255, 0.18); /* Vit kantlinje */
   z-index: 1001; /* Placera över andra element */
   border-radius: 4px; /* Rundade hörn */
   overflow: hidden; /* Förhindra överflöd */
@@ -71,7 +75,7 @@ body {
 
 /* === DROPDOWN-KNAPPAR === */
 .dropdown-content button {
-  color: black; /* Textfärg */
+  color: white; /* Textfärg */
   padding: 12px 16px; /* Utrymme */
   text-decoration: none; /* Ta bort understrykning */
   display: block; /* En knapp per rad */
@@ -84,17 +88,18 @@ body {
   transition: background-color 0.2s ease-in-out; /* Smidig övergång */
 }
 
-/* === HOVER FÖR DROPDOWN-KNAPPAR === */
+/* hover för dropdown knappar */
 .dropdown-content button:hover {
-  background-color: #f1f1f1; /* Ljusgrå bakgrund vid hover */
+  background-color: rgba(255, 0, 0, 0.7); /* Ljusgrå bakgrund vid hover */
+  border-radius: 0;
 }
 
-/* === VISA DROPDOWN VID HOVER === */
+/* visar dropdown vid hover */
 .dropdown:hover .dropdown-content {
-  display: block; /* Visa dropdown vid hover */
+  display: block;
 }
 section {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 80px; /* Lägg till utrymme för fast navigering tex titel */
 }
 
 .container {
@@ -107,6 +112,7 @@ section {
   font-family: var(--font);
   overflow: hidden;
   box-shadow: 2px 2px 50px rgb(104, 103, 103), -2px -2px 50px rgb(104, 103, 103);
+  border-radius: 25px;
 }
 
 /* uppdelning av boxarna */
@@ -193,7 +199,7 @@ section {
   flex: 0 0 65%;
   background-color: var(--backgroundbody);
   overflow-y: auto;
-  max-height: 970px;
+  max-height: fit-content; /* Säkerställ att innehållet inte överlappar */
 }
 
 /* Tidslinje */
@@ -347,6 +353,7 @@ section {
     display: block;
     margin: 0;
     padding: auto;
+    ;
   }
 
   .mobile-nav {
@@ -431,6 +438,7 @@ section {
     display: block;
     padding: 0;
     margin: 0;
+
   }
   .mobile-nav {
     display: flex;

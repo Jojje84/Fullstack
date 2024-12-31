@@ -5,25 +5,27 @@
   display: none; /* Dölj popup som standard */
   position: fixed; /* Popup placeras relativt till viewport */
   width: 100vw; /* Täcker hela skärmen horisontellt */
-  height: 101vh; /* Täcker hela skärmen vertikalt */
+  height: 100vh; /* Täcker hela skärmen vertikalt */
   background: rgba(0, 0, 0, 0.7); /* Halvtransparent bakgrund */
   z-index: 9999; /* Säkerställ att popupen ligger över ALLT annat */
   justify-content: center; /* Centrera horisontellt */
   align-items: center; /* Centrera vertikalt */
   overflow: hidden;
+  top: 0;
 }
 
 /* Popup-innehåll */
 .popup-content {
   background: var(--backgroundbody1);
   color: var(--textcolordarkwhite);
-  padding: 30px;
+  padding: 40px;
   border-radius: 25px;
   max-width: 600px; /* Begränsa bredd */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   animation: popupFadeIn 0.3s ease-in-out;
   position: relative;
   font-family: var(--font);
+  
 }
 
 /* Stängningsknapp */
@@ -180,8 +182,8 @@ textarea {
 }
 @media only screen and (max-width: 932px) {
   .popup-content {
-    padding: 30px;
-    width: 40vh;
+    padding: 20px;
+    width: 50vh;
   }
   .contact {
     padding: 0;
