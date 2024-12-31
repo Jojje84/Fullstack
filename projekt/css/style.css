@@ -197,6 +197,10 @@ section {
   margin-right: 10%;
 }
 
+#copyright {
+  font-size: var(--textsizesmallsmall);
+}
+
 /* Andra wrapper */
 .second-content-wrapper {
   flex: 0 0 65%;
@@ -398,9 +402,6 @@ section {
     margin-top: 0px;
     margin-bottom: 10%;
   }
-  #copyright {
-    font-size: var(--textsizesmallsmall);
-  }
 
   .second-content-wrapper {
     border-radius: 0;
@@ -466,10 +467,8 @@ section {
 }
 /* tablet apple */
 @media only screen and (min-width: 768px) and (min-height: 971px) and (max-height: 1181px) {
-  
   .intro-bild {
     flex: 0 0 15%;
     flex-direction: column;
   }
-
 }
