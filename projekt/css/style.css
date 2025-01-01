@@ -213,7 +213,6 @@ section {
 .timeline-section {
   padding: 20px;
   background-color: var(--backgroundwhite1);
-  overflow-y: auto;
   padding-top: 100px;
 }
 
@@ -238,7 +237,13 @@ section {
 #timelinetitle {
   font-size: var(--sizeheading);
   padding-left: 30px;
-  color: black;
+  color: var(--textcolordarkwhite);
+  position: sticky;
+  top: 5px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background-color: var(--backgrounddark);
+  border-radius: 0 25px 25px 0;
 }
 
 .timeline-item {
@@ -313,14 +318,6 @@ section {
 /* Korrigera cirkeln för behållare på höger sida */
 .right::after {
   left: -14px;
-}
-
-#timelinehr {
-  height: 5px;
-  width: 90%;
-  border: none;
-  background-color: var(--backgroundblue);
-  border-radius: 25px;
 }
 
 /* Skills Section */
