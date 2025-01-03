@@ -105,7 +105,7 @@ section {
 
 .container {
   display: flex;
-  background-color: var(--backgrounddark);
+  background-color: var(--backgroundwhite1);
   color: var(--textcolordarkwhite);
   max-width: 1000px;
   max-height: 900px;
@@ -204,24 +204,69 @@ section {
 /* Andra wrapper */
 .second-content-wrapper {
   flex: 0 0 65%;
-  background-color: var(--backgroundblue);
   overflow-y: auto;
   max-height: fit-content; /* Säkerställ att innehållet inte överlappar */
+  padding: 10px;
+  padding-top: 10%;
+  
 }
 
 /* Tidslinje */
 .timeline-section {
-  padding: 20px;
   background-color: var(--backgroundwhite1);
-  padding-top: 100px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: visible;
+  margin-top: -20px;
 }
 
+/* rubrikerna i timeline  */
+#skills,
+#experience {
+  position: sticky;
+  top: 0;
+  padding: 5px 16px;
+  background: var(--hovercolor);
+  color: var(--textcolordarkwhite);
+  z-index: 2;
+}
+
+/* Skills List */
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+  padding: 30px 0;
+}
+
+/* skills knappar */
+.skill {
+  background-color: var(--backgroundblue);
+  color: var(--textcolordarkwhite);
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Hover effects */
+.skill:hover {
+  background-color: var(--backgrounddark);
+  color: var(--textcolordarkwhite);
+  transform: scale(1.05);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* timeline mellanrum */
 .timeline {
   position: relative;
   max-width: 100%;
   margin: 0 auto;
   color: black;
   font-size: var(--textsizesmall);
+  margin: 20px 0;
 }
 /* tidslinje position*/
 .timeline::after {
@@ -233,17 +278,6 @@ section {
   bottom: 0;
   left: 50%;
   margin-left: -3px;
-}
-#timelinetitle {
-  font-size: var(--sizeheading);
-  padding-left: 30px;
-  color: var(--textcolordarkwhite);
-  position: sticky;
-  top: 5px;
-  z-index: 1000;
-  padding: 10px 16px;
-  background-color: var(--backgrounddark);
-  border-radius: 0 25px 25px 0;
 }
 
 .timeline-item {
@@ -324,31 +358,6 @@ section {
 .skills-section {
   background-color: var(--backgrounddark);
   color: var(--textcolordarkwhite);
-}
-
-/* Skills List */
-.skills {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill {
-  background-color: var(--backgroundblue);
-  color: var(--textcolordarkwhite);
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Hover effects */
-.skill:hover {
-  background-color: var(--backgrounddark);
-  color: var(--textcolordarkwhite);
-  transform: scale(1.05);
-  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Mobile */

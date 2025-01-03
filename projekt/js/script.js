@@ -29,3 +29,5 @@ const days = [
 ];
 const today = new Date().getDay();
 document.getElementById("day").textContent = days[today];
+
+
