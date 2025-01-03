@@ -21,7 +21,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Säkerställ att menyn ligger över andra element */
+  z-index: 9999; /* Säkerställ att menyn ligger över andra element */
   background: var(--backgrundnav); /* Transparent bakgrund */
   backdrop-filter: blur(50px); /* Suddig bakgrund */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till skugga */
@@ -208,7 +208,6 @@ section {
   max-height: fit-content; /* Säkerställ att innehållet inte överlappar */
   padding: 10px;
   padding-top: 10%;
-  
 }
 
 /* Tidslinje */
@@ -228,7 +227,7 @@ section {
   padding: 5px 16px;
   background: var(--hovercolor);
   color: var(--textcolordarkwhite);
-  z-index: 2;
+  z-index: 999;
 }
 
 /* Skills List */
@@ -367,10 +366,13 @@ section {
     margin: 0;
     padding: auto;
     background-color: var(--backgrounddark);
+    overflow: visible !important;
   }
 
   .mobile-nav {
     display: flex;
+    z-index: 9999;
+    position: fixed;
   }
 
   .container {
@@ -414,8 +416,21 @@ section {
     overflow: visible;
   }
   .timeline-section {
-    padding-top: 20px;
+    padding-top: 0px;
   }
+  .container,
+  .second-content-wrapper,
+  .timeline-section {
+    overflow: visible !important;
+    position: relative; /* Sticky kräver en relativ förälder */
+  }
+  #skills,
+  #experience {
+    position: sticky;
+    top: 60px;
+    z-index: 999;
+  }
+
   .timeline-item {
     width: 100%;
   }
