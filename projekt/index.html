@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/colors.css" />
     <link rel="stylesheet" href="css/popup.css" />
   </head>
-  <body>
+  <header>
     <nav class="mobile-nav">
       <button onclick="window.location.href='#main'">Home</button>
       <button onclick="openpopupaboutme()">About</button>
@@ -115,7 +115,6 @@
               name="message"
               id="message"
               placeholder="Write something..."
-              style="height: 200px"
               required
             ></textarea>
 
@@ -125,7 +124,8 @@
         </div>
       </div>
     </div>
-
+  </header>
+  <body>
     <section class="container">
       <!-- Första wrapper -->
       <div class="main-content-wrapper" id="intro">
@@ -181,8 +181,10 @@
       </div>
       <!-- Andra wrapper -->
       <div class="second-content-wrapper">
+        <br>
+        <br>
         <!-- Tidslinje -->
-        <section class="timeline-section">
+        <section>
           <!-- Kompetenser -->
           <div class="timelinetitle" id="skills">
             <h3>Skills</h3>
@@ -195,8 +197,7 @@
             <li class="skill">Sales</li>
           </ul>
         </section>
-
-        <section class="timeline-section">
+        <section>
           <!-- tidslinje plats -->
           <div class="timelinetitle" id="experience">
             <h3>Experience</h3>

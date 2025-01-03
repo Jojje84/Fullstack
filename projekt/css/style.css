@@ -1,4 +1,5 @@
 /* Container */
+
 body {
   background-color: var(--backgroundwhite);
   align-items: center;
@@ -7,7 +8,7 @@ body {
   justify-content: center;
   font-family: var(--font);
 }
-/* === NAVIGATION CONTAINER === */
+/* mobilenav */
 .mobile-nav {
   display: none; /* Horisontell layout */
   justify-content: flex-start; /* Justera innehåll till vänster */
@@ -23,6 +24,7 @@ body {
   right: 0;
   z-index: 9999; /* Säkerställ att menyn ligger över andra element */
   background: var(--backgrundnav); /* Transparent bakgrund */
+  -webkit-backdrop-filter: blur(50px); /* Safari-stöd */
   backdrop-filter: blur(50px); /* Suddig bakgrund */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till skugga */
   border: 2px solid rgba(255, 255, 255, 0.18); /* Vit kantlinje */
@@ -65,6 +67,7 @@ body {
   top: 100%; /* Placera precis under knappen */
   left: 0; /* Börja från vänster */
   background: var(--backgrundnav); /* transparent bakgrund */
+  -webkit-backdrop-filter: blur(8px); /* Safari-stöd */
   backdrop-filter: blur(8px); /* Suddig bakgrund */
   min-width: 160px; /* Standardbredd för dropdown */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Skugga för dropdown */
@@ -123,7 +126,7 @@ section {
 
 /* Första wrapper */
 .main-content-wrapper {
-  display: flex;
+  flex: 1;
   flex-direction: column;
   background-color: var(--backgrounddark);
 }
@@ -173,7 +176,6 @@ section {
 
 /* Footer */
 .footer-wrapper {
-  flex: 0 0 15%;
   background-color: var(--backgrounddark);
   text-align: center;
 }
@@ -203,31 +205,32 @@ section {
 
 /* Andra wrapper */
 .second-content-wrapper {
-  flex: 0 0 65%;
-  overflow-y: auto;
-  max-height: fit-content; /* Säkerställ att innehållet inte överlappar */
-  padding: 10px;
-  padding-top: 10%;
+  display: flex;
+  flex: 1.5;
+  flex-direction: column;
+  overflow: auto;
+  background-color: var(--backgroundwhite1);
 }
 
 /* Tidslinje */
 .timeline-section {
-  background-color: var(--backgroundwhite1);
   padding-top: 0px;
   padding-bottom: 0px;
-  overflow: visible;
-  margin-top: -20px;
+  margin-top: 0px;
 }
 
 /* rubrikerna i timeline  */
 #skills,
 #experience {
   position: sticky;
-  top: 0;
+  top: 0px;
   padding: 5px 16px;
   background: var(--hovercolor);
   color: var(--textcolordarkwhite);
   z-index: 999;
+}
+section {
+  margin-bottom: 0px;
 }
 
 /* Skills List */
@@ -360,75 +363,60 @@ section {
 }
 
 /* Mobile */
-@media only screen and (max-width: 767px) {
-  body {
-    display: block;
-    margin: 0;
-    padding: auto;
-    background-color: var(--backgrounddark);
-    overflow: visible !important;
-  }
 
+@media only screen and (max-width: 767px) {
+  /* mobile nav synligt */
   .mobile-nav {
     display: flex;
     z-index: 9999;
-    position: fixed;
+    top: 0;
+  }
+
+  body {
+    display: block;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
   }
 
   .container {
     flex-direction: column;
+    overflow: visible;
     border-radius: 0;
-    overflow: auto;
-    max-width: fit-content;
-    max-height: fit-content;
-    margin-top: 6%;
+  }
+  .main-content-wrapper {
+    border-radius: 0;
+    flex-grow: 1;
   }
 
   .intro-bild {
-    justify-content: center;
     align-items: left;
     margin-top: 12%;
     margin-left: 40px;
   }
-
-  .intro-section {
-    margin-left: 40px;
-    margin-right: 40px;
+  .second-content-wrapper {
+    display: flex; /* Behåll flexlayout */
+    flex-direction: column;
+    flex-grow: 1; /* Låt wrapper växa korrekt */
+    padding: 25px;
+    overflow: visible;
+    box-sizing: border-box;
+    gap: 0px;
   }
+
+  #skills,
+  #experience {
+    top: 60px; /* Anpassa sticky position */
+    z-index: 10;
+    margin-bottom: 0px;
+    padding: 8px 16px;
+  }
+
   .intro-section a {
     display: none;
   }
   .messagetext {
     display: none;
-  }
-
-  .footer-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0px;
-    margin-bottom: 10%;
-  }
-
-  .second-content-wrapper {
-    border-radius: 0;
-    overflow: visible;
-  }
-  .timeline-section {
-    padding-top: 0px;
-  }
-  .container,
-  .second-content-wrapper,
-  .timeline-section {
-    overflow: visible !important;
-    position: relative; /* Sticky kräver en relativ förälder */
-  }
-  #skills,
-  #experience {
-    position: sticky;
-    top: 60px;
-    z-index: 999;
   }
 
   .timeline-item {
@@ -469,16 +457,23 @@ section {
   }
   .mobile-nav {
     display: flex;
+    z-index: 999999;
   }
   .container {
-    border-radius: 0;
-    max-width: fit-content;
-    max-height: fit-content;
+    flex-direction: column;
+  }
+  .second-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   .intro-section a {
     display: none;
   }
+
   .messagetext {
     visibility: hidden;
   }
