@@ -127,8 +127,10 @@ section {
 /* Första wrapper */
 .main-content-wrapper {
   flex: 1;
+  flex: 0 0 35%;
   flex-direction: column;
   background-color: var(--backgrounddark);
+  padding-top: 10%;
 }
 
 .intro-bild {
@@ -137,7 +139,6 @@ section {
   flex-direction: column; /* Stapla innehållet vertikalt */
   justify-content: flex-end; /* Flytta innehållet längst ner */
   margin-left: 10%;
-  padding-top: 10%;
 }
 
 .foto {
@@ -176,8 +177,12 @@ section {
 
 /* Footer */
 .footer-wrapper {
-  background-color: var(--backgrounddark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  justify-content: center;
+  padding: 15%;
 }
 
 .footer-up img {
@@ -206,17 +211,15 @@ section {
 /* Andra wrapper */
 .second-content-wrapper {
   display: flex;
-  flex: 1.5;
+  flex: 0 0 65%;
   flex-direction: column;
   overflow: auto;
+  overflow-x: hidden;
   background-color: var(--backgroundwhite1);
-}
-
-/* Tidslinje */
-.timeline-section {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 0px;
+  box-sizing: border-box;
+  margin: 5% 0 5% 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* rubrikerna i timeline  */
@@ -224,11 +227,13 @@ section {
 #experience {
   position: sticky;
   top: 0px;
-  padding: 5px 16px;
+  padding: 5px 15px;
   background: var(--hovercolor);
   color: var(--textcolordarkwhite);
   z-index: 999;
+  margin: 0 10px 0px 10px;
 }
+
 section {
   margin-bottom: 0px;
 }
@@ -394,6 +399,13 @@ section {
     margin-top: 12%;
     margin-left: 40px;
   }
+
+  .intro-section a {
+    display: none;
+  }
+  .messagetext {
+    display: none;
+  }
   .second-content-wrapper {
     display: flex; /* Behåll flexlayout */
     flex-direction: column;
@@ -410,13 +422,6 @@ section {
     z-index: 10;
     margin-bottom: 0px;
     padding: 8px 16px;
-  }
-
-  .intro-section a {
-    display: none;
-  }
-  .messagetext {
-    display: none;
   }
 
   .timeline-item {
@@ -462,13 +467,6 @@ section {
   .container {
     flex-direction: column;
   }
-  .second-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 10px;
-    box-sizing: border-box;
-  }
 
   .intro-section a {
     display: none;
@@ -477,6 +475,14 @@ section {
   .messagetext {
     visibility: hidden;
   }
+  .second-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
   .timeline-item.left {
     left: -20px;
   }

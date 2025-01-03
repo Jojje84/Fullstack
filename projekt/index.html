@@ -9,123 +9,124 @@
     <link rel="stylesheet" href="css/colors.css" />
     <link rel="stylesheet" href="css/popup.css" />
   </head>
-  <header>
-    <nav class="mobile-nav">
-      <button onclick="window.location.href='#main'">Home</button>
-      <button onclick="openpopupaboutme()">About</button>
-      <div class="dropdown">
-        <button class="dropbtn">timeline ☰</button>
-        <div class="dropdown-content">
-          <button onclick="window.location.href='#skills'">skills</button>
-          <button onclick="window.location.href='#experience'">
-            Experience
-          </button>
-        </div>
-      </div>
-      <button onclick="openpopupcontact()">Contact</button>
-    </nav>
-    <div id="popup-aboutme" class="popup">
-      <div class="popup-content">
-        <button class="close-btn" onclick="closePopupAboutMe()">x</button>
-        <br />
-        <p id="mainboxtitle">About me</p>
-        <hr />
-        <p id="texthead">
-          I have been working in the development of various companies for 8
-          years at the same tima as contraction of system. It is a job that I
-          enjoy very well, but I feel ready to take another step in my career.
-          Johnson & Johnson is also a company that I have heard very well about,
-          which causes my interest in working with you.
-        </p>
-        <p id="texthead">
-          In my current experience I have been responsible for some 10 projects
-          with 10 - 140 people involved. A typical project includes people from
-          several departments of the company, for example. Sellers, designers
-          and it-designers as well as representatives from our customers, mainly
-          in financial services and insurance. I am an educated economist, and
-          previously worked as a production developer, avd have deep expertise
-          in economics and development. During my previous, i have attended
-          courses in project management, finance, communication and leadership,
-          witch have helped me feel secure in my previous role, although of
-          course i can develop further witch I am sure I can do with in the
-          company.
-        </p>
-      </div>
-    </div>
-    <div id="popup-contact" class="popup">
-      <div class="popup-content">
-        <button class="close-btn" onclick="closePopupContact()">x</button>
-        <br />
-        <p id="mainboxtitle">Kontakta mig</p>
-        <p>
-          Har du frågor, idéer eller vill samarbeta? Tveka inte att höra av dig!
-          Du kan använda formuläret nedan eller kontakta mig via e-post. Jag
-          svarar oftast inom 24 timmar.
-          <br />
-          <br />
-          📧 Email:jorgeavilas@icloud.com
-          <br />
-          📞 Phone: 070-737 08 49
-          <br />
-          🏢 Address: Exempelvägen 123, 123 45 Stockholm
-        </p>
-        <br />
-        <div class="contact">
-          <form
-            action="mailto:jorgeavilas@icloud.com"
-            method="post"
-            enctype="text/plain"
-          >
-            <div class="form-firstrow">
-              <!-- Förnamn -->
-              <input
-                type="text"
-                id="fname"
-                name="firstname"
-                placeholder="Your name..."
-                required
-                autocomplete="given-name"
-              />
 
-              <!-- Efternamn  -->
-              <input
-                type="text"
-                id="lname"
-                name="lastname"
-                placeholder="Your last name..."
-                required
-                autocomplete="family-name"
-              />
-            </div>
-
-            <div class="form-secondrow">
-              <!-- email -->
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your email..."
-                required
-                autocomplete="email"
-              />
-            </div>
-
-            <!-- meddelande -->
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Write something..."
-              required
-            ></textarea>
-
-            <!-- knappen skicka -->
-            <button type="submit" class="button">Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header>
   <body>
+    <header>
+      <nav class="mobile-nav">
+        <button onclick="window.location.href='#main'">Home</button>
+        <button onclick="openpopupaboutme()">About</button>
+        <div class="dropdown">
+          <button class="dropbtn">timeline ☰</button>
+          <div class="dropdown-content">
+            <button onclick="window.location.href='#skills'">skills</button>
+            <button onclick="window.location.href='#experience'">
+              Experience
+            </button>
+          </div>
+        </div>
+        <button onclick="openpopupcontact()">Contact</button>
+      </nav>
+      <div id="popup-aboutme" class="popup">
+        <div class="popup-content">
+          <button class="close-btn" onclick="closePopupAboutMe()">x</button>
+          <br />
+          <p id="mainboxtitle">About me</p>
+          <hr />
+          <p id="texthead">
+            I have been working in the development of various companies for 8
+            years at the same tima as contraction of system. It is a job that I
+            enjoy very well, but I feel ready to take another step in my career.
+            Johnson & Johnson is also a company that I have heard very well
+            about, which causes my interest in working with you.
+          </p>
+          <p id="texthead">
+            In my current experience I have been responsible for some 10
+            projects with 10 - 140 people involved. A typical project includes
+            people from several departments of the company, for example.
+            Sellers, designers and it-designers as well as representatives from
+            our customers, mainly in financial services and insurance. I am an
+            educated economist, and previously worked as a production developer,
+            avd have deep expertise in economics and development. During my
+            previous, i have attended courses in project management, finance,
+            communication and leadership, witch have helped me feel secure in my
+            previous role, although of course i can develop further witch I am
+            sure I can do with in the company.
+          </p>
+        </div>
+      </div>
+      <div id="popup-contact" class="popup">
+        <div class="popup-content">
+          <button class="close-btn" onclick="closePopupContact()">x</button>
+          <br />
+          <p id="mainboxtitle">Kontakta mig</p>
+          <p>
+            Har du frågor, idéer eller vill samarbeta? Tveka inte att höra av
+            dig! Du kan använda formuläret nedan eller kontakta mig via e-post.
+            Jag svarar oftast inom 24 timmar.
+            <br />
+            <br />
+            📧 Email:jorgeavilas@icloud.com
+            <br />
+            📞 Phone: 070-737 08 49
+            <br />
+            🏢 Address: Exempelvägen 123, 123 45 Stockholm
+          </p>
+          <br />
+          <div class="contact">
+            <form
+              action="mailto:jorgeavilas@icloud.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="form-firstrow">
+                <!-- Förnamn -->
+                <input
+                  type="text"
+                  id="fname"
+                  name="firstname"
+                  placeholder="Your name..."
+                  required
+                  autocomplete="given-name"
+                />
+
+                <!-- Efternamn  -->
+                <input
+                  type="text"
+                  id="lname"
+                  name="lastname"
+                  placeholder="Your last name..."
+                  required
+                  autocomplete="family-name"
+                />
+              </div>
+
+              <div class="form-secondrow">
+                <!-- email -->
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email..."
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <!-- meddelande -->
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Write something..."
+                required
+              ></textarea>
+
+              <!-- knappen skicka -->
+              <button type="submit" class="button">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
     <section class="container">
       <!-- Första wrapper -->
       <div class="main-content-wrapper" id="intro">
@@ -181,8 +182,6 @@
       </div>
       <!-- Andra wrapper -->
       <div class="second-content-wrapper">
-        <br>
-        <br>
         <!-- Tidslinje -->
         <section>
           <!-- Kompetenser -->
