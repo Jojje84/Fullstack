@@ -1,4 +1,3 @@
-
 // Öppna popup
 function openpopupaboutme() {
   document.getElementById("popup-aboutme").style.display = "flex";
@@ -30,4 +29,26 @@ const days = [
 const today = new Date().getDay();
 document.getElementById("day").textContent = days[today];
 
+document.addEventListener("DOMContentLoaded", () => {
+  const notification = document.querySelector(".notification");
+  const overlay = document.querySelector(".overlay");
 
+  // Kontrollera sessionStorage för popup-flaggan
+  if (!sessionStorage.getItem("popupShown")) {
+    // Visa popup och overlay om den inte har visats tidigare i sessionen
+    notification.classList.remove("hidden");
+    notification.classList.add("show");
+    overlay.classList.remove("hidden");
+
+    // Markera i sessionStorage att popupen har visats
+    sessionStorage.setItem("popupShown", "true");
+  }
+
+  // Hantera stängningsknappen
+  const btn = document.querySelector(".btn-primary");
+  btn.addEventListener("click", () => {
+    notification.classList.remove("show");
+    notification.classList.add("hidden");
+    overlay.classList.add("hidden");
+  });
+});

@@ -3,10 +3,124 @@
 body {
   background-color: var(--backgroundwhite);
   align-items: center;
-  min-height: 98vh;
   display: flex;
   justify-content: center;
   font-family: var(--font);
+}
+header {
+  margin: 0;
+  height: 100vh;
+  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-primary {
+  background: #696969;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-primary:hover {
+  background: #4d4d4d;
+}
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Halvtransparent svart bakgrund */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  
+}
+
+.notification {
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 90%;
+  background: #0f0f0f;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Göm notifikationen initialt */
+.hidden {
+  display: none;
+}
+
+/* Visa notifikationen dynamiskt */
+.show {
+  display: flex;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+/* datum */
+
+.notif-i {
+  font-size: 1.5rem;
+  background: rgb(113, 243, 113);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.animate {
+  animation: pop 0.5s forwards;
+}
+
+@keyframes pop {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 /* mobilenav */
 .mobile-nav {
@@ -230,7 +344,7 @@ section {
   padding: 5px 15px;
   background: var(--hovercolor);
   color: var(--textcolordarkwhite);
-  z-index: 999;
+  z-index: 1;
   margin: 0 10px 0px 10px;
 }
 
@@ -305,7 +419,7 @@ section {
   border: 4px solid #43f35b4d;
   top: 25px;
   border-radius: 50%;
-  z-index: 1;
+  
 }
 
 .timeline-item.left {
@@ -323,7 +437,6 @@ section {
   position: absolute;
   top: 30px;
   width: 0;
-  z-index: 1;
   right: 25px;
   border: medium solid white;
   border-width: 10px 0 10px 10px;
@@ -337,7 +450,6 @@ section {
   position: absolute;
   top: 30px;
   width: 0;
-  z-index: 1;
   left: 25px;
   border: medium solid white;
   border-width: 10px 10px 10px 0;
@@ -366,28 +478,49 @@ section {
   background-color: var(--backgrounddark);
   color: var(--textcolordarkwhite);
 }
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 1366px) {
+  /* Anpassade stilar för alla iPad-modeller */
+}
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-/* Mobile */
+header {
+  display: block;
+}
 
-@media only screen and (max-width: 767px) {
+/* phones */
+@media only screen and (min-width: 320px) and (max-width: 430px) and (orientation: portrait) {
+  /* Anpassade stilar för stående läge på alla iPhones */
   /* mobile nav synligt */
   .mobile-nav {
     display: flex;
-    z-index: 9999;
+  
     top: 0;
   }
-
   body {
+    display: flex;
+    padding: -10px;
+    margin: 0px;
+    overflow: scroll;
+    background-color: transparent;
+    flex-direction: column;
+  }
+  header {
     display: block;
-    padding: 0;
-    margin: 0;
-    overflow: auto;
   }
 
   .container {
     flex-direction: column;
     overflow: visible;
     border-radius: 0;
+    flex-grow: 1;
   }
   .main-content-wrapper {
     border-radius: 0;
@@ -419,7 +552,7 @@ section {
   #skills,
   #experience {
     top: 60px; /* Anpassa sticky position */
-    z-index: 10;
+   
     margin-bottom: 0px;
     padding: 8px 16px;
   }
@@ -450,47 +583,5 @@ section {
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent white;
     display: none;
-  }
-}
-
-/* tablet (not apple/surface/asus*/
-@media only screen and (min-width: 767px) and (max-height: 970px) {
-  body {
-    display: block;
-    padding: 0;
-    margin: 0;
-  }
-  .mobile-nav {
-    display: flex;
-    z-index: 999999;
-  }
-  .container {
-    flex-direction: column;
-  }
-
-  .intro-section a {
-    display: none;
-  }
-
-  .messagetext {
-    visibility: hidden;
-  }
-  .second-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .timeline-item.left {
-    left: -20px;
-  }
-}
-/* tablet apple */
-@media only screen and (min-width: 768px) and (min-height: 971px) and (max-height: 1181px) {
-  .intro-bild {
-    flex: 0 0 15%;
-    flex-direction: column;
   }
 }
