@@ -7,14 +7,6 @@ body {
   justify-content: center;
   font-family: var(--font);
 }
-header {
-  margin: 0;
-  height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  overflow: hidden;
-  position: relative;
-}
 
 .btn-primary {
   background: #696969;
@@ -36,10 +28,10 @@ header {
 }
 
 .overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5); /* Halvtransparent svart bakgrund */
   backdrop-filter: blur(10px);
@@ -47,12 +39,9 @@ header {
 }
 
 .notification {
-  position: fixed;
-  top: 30%;
-  left: 40%;
+  position: absolute;
   transform: translate(-50%, -50%);
   width: 400px;
-  max-width: 90%;
   background: #0f0f0f;
   padding: 20px;
   border-radius: 15px;
@@ -521,13 +510,18 @@ body {
   min-height: 100vh;
 }
 
-header {
-  display: block;
-}
-
 /* phones */
 @media only screen and (min-width: 320px) and (max-width: 430px) and (orientation: portrait) {
   /* Anpassade stilar för stående läge på alla iPhones */
+
+  .overlay {
+    position: fixed;
+    height: 100vh;
+  }
+
+  .notification {
+    width: 90%;
+  }
   /* mobile nav synligt */
   .mobile-nav {
     display: flex;
@@ -541,9 +535,6 @@ header {
     overflow: scroll;
     background-color: transparent;
     flex-direction: column;
-  }
-  header {
-    display: block;
   }
 
   .container {
@@ -583,7 +574,7 @@ header {
   #experience {
     top: 60px; /* Anpassa sticky position */
 
-    margin-bottom: 0px;
+    margin: 1px;
     padding: 8px 16px;
   }
 

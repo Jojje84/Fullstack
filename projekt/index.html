@@ -15,35 +15,34 @@
   </head>
 
   <body>
-    <header>
-      <div class="overlay hidde"></div>
-      <div class="notification animate">
-        <div class="header">
-          <span class="title">Welcome</span>
-          <span class="clock">
-            <p id="datetime"></p>
-          </span>
-        </div>
-        <div class="detail">
-          <i class="bi bi-alarm notif-i"></i>
-          <span class="text"
-            >Welcome to me site. I hope you will like it. And please send me a
-            messenge</span
-          >
-        </div>
-        <div class="line"></div>
-        <span id="weather-title">Weather</span>
-        <div class="weather-container">
-          <p id="location"></p>
-          <p id="temperature"></p>
-          <p id="description"></p>
-        </div>
-        <span><img id="icon" alt="Weather Icon" /></span>
-        <button class="btn-primary" onclick="closeNotification()">
-          <i class="bi bi-house"></i> Go to Page
-        </button>
+    <div class="overlay hidde"></div>
+    <div class="notification animate">
+      <div class="header">
+        <span class="title">Welcome</span>
+        <span class="clock">
+          <p id="datetime"></p>
+        </span>
       </div>
-    </header>
+      <div class="detail">
+        <i class="bi bi-alarm notif-i"></i>
+        <span class="text"
+          >Welcome to me site. I hope you will like it. And please send me a
+          messenge</span
+        >
+      </div>
+      <div class="line"></div>
+      <span id="weather-title">Weather</span>
+      <div class="weather-container">
+        <p id="location"></p>
+        <p id="temperature"></p>
+        <p id="description"></p>
+      </div>
+      <span><img id="icon" alt="Weather Icon" /></span>
+      <button class="btn-primary" onclick="closeNotification()">
+        <i class="bi bi-house"></i> Go to Page
+      </button>
+    </div>
+
     <nav class="mobile-nav">
       <button onclick="window.location.href='#main'">Home</button>
       <button onclick="openpopupaboutme()">About</button>
@@ -216,7 +215,7 @@
         <!-- Tidslinje -->
         <section>
           <!-- Kompetenser -->
-          <div class="timelinetitle" id="skills">
+          <div id="skills">
             <h3>Skills</h3>
           </div>
           <ul class="skills">
@@ -229,7 +228,7 @@
         </section>
         <section>
           <!-- tidslinje plats -->
-          <div class="timelinetitle" id="experience">
+          <div id="experience">
             <h3>Experience</h3>
           </div>
           <div class="timeline">
