@@ -1,0 +1,98 @@
+
+/* phones */
+@media only screen and (min-width: 320px) and (max-width: 430px) and (orientation: portrait) {
+    /* Anpassade stilar för stående läge på alla iPhones */
+  
+    .overlay {
+      position: fixed;
+      height: 100vh;
+    }
+  
+    .notification {
+      width: 90%;
+    }
+    /* mobile nav synligt */
+    .mobile-nav {
+      display: flex;
+  
+      top: 0;
+    }
+    body {
+      display: flex;
+      padding: -10px;
+      margin: 0px;
+      overflow: scroll;
+      background-color: transparent;
+      flex-direction: column;
+    }
+  
+    .container {
+      flex-direction: column;
+      overflow: visible;
+      border-radius: 0;
+      flex-grow: 1;
+    }
+    .main-content-wrapper {
+      border-radius: 0;
+      flex-grow: 1;
+    }
+  
+    .intro-bild {
+      align-items: left;
+      margin-top: 12%;
+      margin-left: 40px;
+    }
+  
+    .intro-section a {
+      display: none;
+    }
+    .messagetext {
+      display: none;
+    }
+    .second-content-wrapper {
+      display: flex; /* Behåll flexlayout */
+      flex-direction: column;
+      flex-grow: 1; /* Låt wrapper växa korrekt */
+      padding: 25px;
+      overflow: visible;
+      box-sizing: border-box;
+      gap: 0px;
+    }
+  
+    #skills,
+    #experience {
+      top: 60px; /* Anpassa sticky position */
+  
+      margin: 1px;
+      padding: 8px 16px;
+    }
+  
+    .timeline-item {
+      width: 100%;
+    }
+    .timeline-item.left {
+      left: -35px;
+    }
+    .timeline-item.right {
+      left: -35px;
+    }
+  
+    .timeline-item::after {
+      display: none;
+    }
+  
+    .timeline-item.left::before {
+      right: 25px;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+      display: none;
+    }
+  
+    .timeline-item.right::before {
+      left: 25px;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+      display: none;
+    }
+  }
+  

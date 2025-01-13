@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google" content="notranslate" />
     <title>Presentation - Jorge Avila</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/colors.css" />
-    <link rel="stylesheet" href="css/popup.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
+    <link rel="shortcut icon" href="assets/fav/icon.jpeg" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
 
   <body>
+    <!-- notofikationen -->
     <div class="overlay hidde"></div>
     <div class="notification animate">
       <div class="header">
         <span class="title">Welcome</span>
+        <!-- klocka app -->
         <span class="clock">
           <p id="datetime"></p>
         </span>
       </div>
+      <!-- ruta i notifi -->
       <div class="detail">
         <i class="bi bi-alarm notif-i"></i>
         <span class="text"
@@ -31,6 +29,7 @@
         >
       </div>
       <div class="line"></div>
+      <!-- väder app -->
       <span id="weather-title">Weather</span>
       <div class="weather-container">
         <p id="location"></p>
@@ -42,7 +41,7 @@
         <i class="bi bi-house"></i> Go to Page
       </button>
     </div>
-
+    <!-- nav för mobile - tablet -->
     <nav class="mobile-nav">
       <button onclick="window.location.href='#main'">Home</button>
       <button onclick="openpopupaboutme()">About</button>
@@ -57,6 +56,7 @@
       </div>
       <button onclick="openpopupcontact()">Contact</button>
     </nav>
+    <!-- popupp om mig -->
     <div id="popup-aboutme" class="popup">
       <div class="popup-content">
         <button class="close-btn" onclick="closePopupAboutMe()">x</button>
@@ -85,6 +85,7 @@
         </p>
       </div>
     </div>
+    <!-- popupp kontakta mig-->
     <div id="popup-contact" class="popup">
       <div class="popup-content">
         <button class="close-btn" onclick="closePopupContact()">x</button>
@@ -119,7 +120,6 @@
                 required
                 autocomplete="given-name"
               />
-
               <!-- Efternamn  -->
               <input
                 type="text"
@@ -130,7 +130,6 @@
                 autocomplete="family-name"
               />
             </div>
-
             <div class="form-secondrow">
               <!-- email -->
               <input
@@ -159,13 +158,12 @@
     </div>
     <section class="container">
       <!-- Första wrapper -->
-      <div class="main-content-wrapper" id="intro">
-        <!-- adderat intro för mobile -->
+      <div class="main-content-wrapper">
         <!-- Introduktion -->
         <section id="main"></section>
         <div class="intro-bild">
           <!-- foto -->
-          <img class="foto" src="assets/foto.jpg" alt="profil" />
+          <img class="foto" src="assets/foto/profil.jpg" alt="profil" />
         </div>
         <div class="intro-section">
           <p id="mainboxtitle">Hi, I am Jorge Avila</p>
@@ -197,10 +195,10 @@
         <!-- Footer -->
         <div class="footer-wrapper">
           <div class="footer-up">
-            <img src="assets/images/facebook.png" alt="Facebook" />
-            <img src="assets/images/linkedin.png" alt="Linkedin" />
-            <img src="assets/images/youtube.png" alt="Youtube" />
-            <img src="assets/images/instagram.png" alt="instagram" />
+            <img src="assets/logos/facebook.png" alt="Facebook" />
+            <img src="assets/logos/linkedin.png" alt="Linkedin" />
+            <img src="assets/logos/youtube.png" alt="Youtube" />
+            <img src="assets/logos/instagram.png" alt="instagram" />
           </div>
           <div class="footer-down">
             <p id="texthead">
@@ -210,6 +208,7 @@
           </div>
         </div>
       </div>
+
       <!-- Andra wrapper -->
       <div class="second-content-wrapper">
         <!-- Tidslinje -->

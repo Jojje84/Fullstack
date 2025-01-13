@@ -1,0 +1,84 @@
+
+/* Första wrapper */
+.main-content-wrapper {
+    flex: 1;
+    flex: 0 0 35%;
+    flex-direction: column;
+    background-color: var(--backgrounddark);
+    padding-top: 10%;
+  }
+  
+  .intro-bild {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column; /* Stapla innehållet vertikalt */
+    justify-content: flex-end; /* Flytta innehållet längst ner */
+    margin-left: 10%;
+  }
+  
+  .foto {
+    width: 20%;
+    border-radius: 50px;
+  }
+  
+  /* Introduktion */
+  .intro-section {
+    flex: 1;
+    background-color: transparent;
+    color: var(--textcolordarkwhite);
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  #mainboxtitle {
+    font-size: var(--sizeheading);
+  }
+  
+  #texthead {
+    font-size: var(--textsize);
+  }
+  
+  /* popout knappar */
+  .intro-section a {
+    color: var(--textcolordarkwhite);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: var(--sizepopbuttoms);
+  }
+  
+  .intro-section a:hover {
+    color: rgb(72, 72, 231);
+  }
+  
+  /* Footer */
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 15%;
+  }
+  
+  .footer-up img {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+  }
+  
+  .footer-up img:hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-down {
+    font-size: var(textsizesmall);
+    color: var(--textcolordarkwhite);
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  #copyright {
+    font-size: var(--textsizesmallsmall);
+  }
