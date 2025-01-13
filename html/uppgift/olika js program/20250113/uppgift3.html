@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enkelt Formulär</title>
+  </head>
+  <body>
+    <h1>Enkelt Formulär</h1>
+    <form id="myForm" action="#" method="post">
+      <label for="textInput">Textinmatning:</label>
+      <input type="text" id="textInput" name="textInput" />
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      const textInput = document.getElementById("textInput");
+      const form = document.getElementById("myForm");
+
+      textInput.addEventListener("focus", function () {
+        textInput.style.background = "red";
+      });
+
+      textInput.addEventListener("blur", function () {
+        textInput.value = textInput.value.toUpperCase();
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Det var skickat");
+      });
+    </script>
+  </body>
+</html>
