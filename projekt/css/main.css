@@ -1,7 +1,7 @@
 /* css */
 @import url("colors.css"); /* färger / text på hemsida */
 @import url("notifi.css"); /* notifikationen som är först på sidan */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"); /* olika icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css?v=1.11.3"); /* olika icons */
 
 @import url("main-content.css"); /* Första delen */
 @import url("popup.css"); /* popupp rutor */

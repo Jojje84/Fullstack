@@ -29,6 +29,7 @@ const days = [
 const today = new Date().getDay();
 document.getElementById("day").textContent = days[today];
 
+// notifikaiton
 document.addEventListener("DOMContentLoaded", () => {
   const notification = document.querySelector(".notification");
   const overlay = document.querySelector(".overlay");
@@ -97,7 +98,7 @@ async function updateWeather() {
     const data = await response.json();
 
     // Uppdatera HTML-element med väderdata
-    document.getElementById("location").textContent = data.timezone;
+    document.getElementById("location").textContent = data.resolvedAddress;
     document.getElementById(
       "temperature"
     ).textContent = `${data.days[0].temp}°C`;

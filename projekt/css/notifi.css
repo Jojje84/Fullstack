@@ -8,6 +8,8 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 15px;
+  
 }
 .btn-primary:hover {
   background: #4d4d4d;
@@ -16,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  flex-direction: column;
 }
 
 .overlay {
@@ -63,7 +65,6 @@
   justify-content: space-between;
   align-items: center; /* Vertikal centrering */
   padding: 0 5px; /* Lägg till lite padding om det behövs */
-  box-sizing: border-box; /* Se till att padding inte påverkar bredden */
 }
 .title {
   font-size: 0.8rem;
@@ -78,9 +79,9 @@
 }
 
 .notif-i {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: white;
-  display: flex;
+  margin-bottom: 5px;
 }
 .text {
   color: white;
@@ -96,23 +97,41 @@
 #weather-title {
   color: white;
 }
-.weather-container {
-  width: 100%;
+
+.weather-box {
   display: flex;
-  justify-content: space-between;
   align-items: center; /* Vertikal centrering */
+  justify-content: flex-start; /* Justerar ikon och text horisontellt */
+  gap: 20px; /* Lägger lite mellanrum mellan ikon och text */
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Centrerar texten vertikalt */
+  text-align: flex-start; /* Alternativt använd `center` för centrerad text */
+  gap: 0px;
 }
 #location,
 #temperature,
 #description {
   font-size: 0.8rem;
-  font-weight: 600;
   color: rgb(161, 159, 159);
 }
+
+.weather-container p {
+  margin: 0; /* Ta bort onödiga marginaler */
+  padding: 0; /* Ta bort padding */
+  line-height: 1.2; /* Minska radavståndet */
+}
+
 #icon {
   filter: invert(100%);
   width: 50px; /* Justera storleken på ikonen */
   height: 50px;
+  display: block;
+  margin: 0;
+  align-self: center;
 }
 
 .animate {
