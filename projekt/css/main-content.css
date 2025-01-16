@@ -34,6 +34,10 @@
     font-size: var(--sizeheading);
   }
   
+  #link-btn {
+    font-size: var(--textsize);
+  }
+
   #texthead {
     font-size: var(--textsize);
   }

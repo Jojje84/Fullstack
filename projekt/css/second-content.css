@@ -1,23 +1,19 @@
-
 /* Andra wrapper */
 .second-content-wrapper {
-    display: flex;
-    flex: 0 0 65%;
-    flex-direction: column;
-    overflow: auto;
-    overflow-x: hidden;
-    background-color: var(--backgroundwhite1);
-    box-sizing: border-box;
-    margin: 5% 0 5% 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  
+  display: flex;
+  flex: 0 0 65%;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+  background-color: var(--backgroundwhite1);
+  box-sizing: border-box;
+  margin: 5% 0 5% 0;
+  position: relative;
+  z-index: 1;
+}
 
 /* rubrikerna i timeline  */
-#skills,
-#experience {
+.label {
   position: sticky;
   top: 0px;
   padding: 5px 15px;
@@ -157,4 +153,25 @@ section {
 .skills-section {
   background-color: var(--backgrounddark);
   color: var(--textcolordarkwhite);
+}
+
+.place {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  color: black;
+  font-size: var(--textsizesmall);
+  margin: 20px 0;
+}
+
+.info {
+  background-color: var(--backgroundwhite);
+  border-radius: 25px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+.place-text {
+  font-style: italic;
 }
