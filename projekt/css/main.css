@@ -12,12 +12,18 @@
 @import url("media-tablet.css"); /* media för tablet */
 
 /* Container */
+
+* {
+  box-sizing: border-box;
+  
+}
 body {
   background-color: var(--backgroundwhite);
   align-items: center;
   display: flex;
   justify-content: center;
   font-family: var(--font);
+  overflow-x: hidden;
 }
 
 .container {

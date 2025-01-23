@@ -3,17 +3,75 @@
 .main-content-wrapper {
     flex: 1;
     flex: 0 0 35%;
-    flex-direction: column;
     background-color: var(--backgrounddark);
-    padding-top: 10%;
   }
   
+  /* dark */
+.dark-white {
+  justify-items: center;
+  position: flex;
+  padding-top: 5%;
+  
+}
+  
+  h1 {
+    font: 20px "Poppins", sans-serif;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: var(--input-color)
+  }
+  
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .checkbox-label {
+    background-color: var(--backgroundwhite);
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bi-moon-fill {
+    color: #0a0a0a;
+  }
+  
+  .bi-sun-fill {
+    color: #e6e20b;
+  }
+  
+  .checkbox-label .ball {
+    background: var(--btn-backgroundcolor);
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+    box-shadow: 0 0 1px #0c0c0c;
+  }
+  
+  .checkbox:checked+.checkbox-label .ball {
+    transform: translateX(24px);
+  }
+  
+
+/* bild - profil */
   .intro-bild {
     flex: 0 0 25%;
     display: flex;
     flex-direction: column; /* Stapla innehållet vertikalt */
     justify-content: flex-end; /* Flytta innehållet längst ner */
     margin-left: 10%;
+    margin-top: 15%;
   }
   
   .foto {
@@ -86,3 +144,4 @@
   #copyright {
     font-size: var(--textsizesmallsmall);
   }
+

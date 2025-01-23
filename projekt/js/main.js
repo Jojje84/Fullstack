@@ -122,3 +122,9 @@ async function updateWeather() {
 
 // Kör funktionen när sidan laddas
 document.addEventListener("DOMContentLoaded", updateWeather);
+
+
+const checkbox = document.getElementById("checkbox")
+        checkbox.addEventListener("change", () => {
+            document.body.classList.toggle("dark-mode")
+        })

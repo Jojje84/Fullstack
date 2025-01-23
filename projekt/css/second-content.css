@@ -12,6 +12,7 @@
   z-index: 1;
 }
 
+
 /* rubrikerna i timeline  */
 .label {
   position: sticky;
@@ -84,13 +85,13 @@ section {
   width: 40%;
 }
 
-/* Cirklarna på tidslinjen */
+/* Cirklarna på tidslinjen GRÖNA  FÖRSTA*/
 .timeline-item::after {
   content: "";
   position: absolute;
   width: 25px;
   height: 25px;
-  right: -18px;
+  right: -22px;
   background-color: var(--backgroundwhite);
   border: 4px solid #43f35b4d;
   top: 25px;
@@ -99,7 +100,7 @@ section {
 }
 
 .timeline-item.left {
-  left: -1%;
+  left: 9%;
 }
 
 .timeline-item.right {
@@ -146,7 +147,7 @@ section {
 
 /* Korrigera cirkeln för behållare på höger sida */
 .right::after {
-  left: -14px;
+  left: -17px;
 }
 
 /* Skills Section */

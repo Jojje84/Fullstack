@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <title>@codewith_muhilan</title>
+    <style>
+        
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #f5f5f5;
+            --input-color: #111;
+        }
+
+        body {
+            background: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .dark-mode {
+            --bg-color: #111;
+            --input-color: #f5f5f5;
+        }
+
+        h1 {
+            font: 20px "Poppins", sans-serif;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: var(--input-color)
+        }
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .checkbox-label {
+            background-color: var(--input-color);
+            width: 50px;
+            height: 26px;
+            border-radius: 50px;
+            position: relative;
+            padding: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fa-moon {
+            color: #f1c40f;
+        }
+
+        .fa-sun {
+            color: #f39c12;
+        }
+
+        .checkbox-label .ball {
+            background: var(--bg-color);
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            border-radius: 50%;
+            transition: transform 0.2s linear;
+        }
+
+        .checkbox:checked+.checkbox-label .ball {
+            transform: translateX(24px);
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- <h1>@codewith_muhilan</h1> -->
+    <div>
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+
+    
+    
+
+    <script>
+        const checkbox = document.getElementById("checkbox")
+        checkbox.addEventListener("change", () => {
+            document.body.classList.toggle("dark-mode")
+        })
+    </script>
+
+</body>
+
+</html>
