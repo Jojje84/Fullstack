@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "name": "Fullstack",
+      "path": "Fullstack"
+    },
+    {
+      "name": "homepage",
+      "path": "homepage"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "homepage"
+  }
+}
