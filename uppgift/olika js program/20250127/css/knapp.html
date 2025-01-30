@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulsande Knapp</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      .btn {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Knapp</button>
+  </body>
+</html>
