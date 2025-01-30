@@ -1,0 +1,99 @@
+/* Nav för mobil - tablet */
+
+/* mobilenav */
+.mobile-nav {
+    display: none; /* Horisontell layout */
+    justify-content: flex-start; /* Justera innehåll till vänster */
+    align-items: center; /* Centrera vertikalt */
+    gap: 10px; /* Avstånd mellan knappar */
+    padding: 10px 20px; /* Lägg till lite utrymme */
+    margin: 0;
+    list-style-type: none; /* Ta bort punkter */
+    overflow: visible; /* Säkerställ att dropdown visas korrekt */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999; /* Säkerställ att menyn ligger över andra element */
+    background: var(--backgrundnav); /* Transparent bakgrund */
+    -webkit-backdrop-filter: blur(50px); /* Safari-stöd */
+    backdrop-filter: blur(50px); /* Suddig bakgrund */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägg till skugga */
+    border: 2px solid rgba(255, 255, 255, 0.18); /* Vit kantlinje */
+  }
+  
+  /* knapparna */
+  .mobile-nav button,
+  .dropbtn {
+    color: var(--textcolordarkwhite); /* Vit text */
+    text-align: center; /* Centrera texten */
+    padding: 14px 16px; /* Utrymme inuti knappar */
+    text-decoration: none; /* Ta bort understrykning */
+    border: none; /* Ingen kantlinje */
+    background: none; /* Ingen bakgrund */
+    cursor: pointer; /* Pekare ändras till hand */
+    font-family: Arial, sans-serif; /* Standardtypsnitt */
+    font-size: var(--textsize); /* Textstorlek */
+    transition: background-color 0.3s ease-in-out; /* Smidig övergång */
+    white-space: nowrap; /* Texten bryts inte */
+  }
+  
+  /* hover effekt för knappar */
+  .mobile-nav button:hover,
+  .dropbtn:hover {
+    background-color: var(--hovercolor); /* Semi-transparent bakgrund */
+    border-radius: 10px; /* Rundade hörn */
+  }
+  
+  /* === DROPDOWN === */
+  .dropdown {
+    position: relative; /* För att dropdown ska vara relativ till knappen */
+    display: inline-block;
+    z-index: 1500; /* Säkerställ att dropdown ligger över andra element */
+  }
+  
+  /* === DROPDOWN-INNEHÅLL === */
+  .dropdown-content {
+    display: none; /* Dölj som standard */
+    position: absolute;
+    top: 100%; /* Placera precis under knappen */
+    left: 0; /* Börja från vänster */
+    background: var(--backgrundnav); /* transparent bakgrund */
+    -webkit-backdrop-filter: blur(8px); /* Safari-stöd */
+    backdrop-filter: blur(8px); /* Suddig bakgrund */
+    min-width: 160px; /* Standardbredd för dropdown */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Skugga för dropdown */
+    border: 2px solid rgba(255, 255, 255, 0.18); /* Vit kantlinje */
+    z-index: 1001; /* Placera över andra element */
+    border-radius: 4px; /* Rundade hörn */
+    overflow: hidden; /* Förhindra överflöd */
+  }
+  
+  /* === DROPDOWN-KNAPPAR === */
+  .dropdown-content button {
+    color: var(--textcolordarkwhite); /* Textfärg */
+    padding: 12px 16px; /* Utrymme */
+    text-decoration: none; /* Ta bort understrykning */
+    display: block; /* En knapp per rad */
+    text-align: left; /* Vänsterjusterad text */
+    background: none; /* Ingen bakgrund */
+    border: none; /* Ingen kantlinje */
+    width: 100%; /* Fyll dropdown bredden */
+    cursor: pointer; /* Handpekare */
+    font-size: var(--textsize); /* Textstorlek */
+    transition: background-color 0.2s ease-in-out; /* Smidig övergång */
+  }
+  
+  /* hover för dropdown knappar */
+  .dropdown-content button:hover {
+    background-color: var(--hovercolor); /* Ljusgrå bakgrund vid hover */
+    border-radius: 0;
+  }
+  
+  /* visar dropdown vid hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  section {
+    scroll-margin-top: 80px; /* Lägg till utrymme för fast navigering tex titel */
+  }
