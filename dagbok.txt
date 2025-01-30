@@ -1,0 +1,4 @@
+Dag 1: Började lära mig om Git idag. Det är spännande!
+Dag 2: Fortsatte att utforska Git. Gjorde min första commit!
+
+Dag 4: Började skriva en ny berättelse i min dagbok.
