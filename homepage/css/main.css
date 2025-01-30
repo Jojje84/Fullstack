@@ -20,7 +20,8 @@ body {
   display: flex;
   justify-content: center;
   font-family: var(--font);
-  overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container {
