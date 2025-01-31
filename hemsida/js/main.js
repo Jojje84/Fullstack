@@ -17,15 +17,7 @@ function closePopupContact() {
 }
 
 //dagar hälsning
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const today = new Date().getDay();
 document.getElementById("day").textContent = days[today];
 
@@ -114,11 +106,8 @@ async function updateWeather() {
     }
     // Uppdatera HTML-element med väderdata
     document.getElementById("location").textContent = data.resolvedAddress;
-    document.getElementById(
-      "temperature"
-    ).textContent = `${data.days[0].temp}°C`;
-    document.getElementById("description").textContent =
-      data.days[0].description;
+    document.getElementById("temperature").textContent = `${data.days[0].temp}°C`;
+    document.getElementById("description").textContent = data.days[0].description;
 
     // Hämta ikonnamn från API
     const icon = data.days[0].icon; // T.ex. "partly-cloudy-day"
