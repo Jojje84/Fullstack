@@ -74,16 +74,12 @@
 /* Roterar linjerna vid hover */
 .close-btn:hover::before {
   transform: rotate(135deg); /* Roterar linjen till nytt läge */
-  background-color: var(
-    --backgroundwhite
-  ); /* Säkerställer att färgen förblir vit */
+  background-color: var(--backgroundwhite); /* Säkerställer att färgen förblir vit */
 }
 
 .close-btn:hover::after {
   transform: rotate(45deg); /* Roterar linjen till nytt läge */
-  background-color: var(
-    --backgroundwhite
-  ); /* Säkerställer att färgen förblir vit */
+  background-color: var(--backgroundwhite); /* Säkerställer att färgen förblir vit */
 }
 
 /* Popup-animation */
