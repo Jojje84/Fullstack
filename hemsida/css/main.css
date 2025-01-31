@@ -20,6 +20,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: var(--font);
+  height: 100vh;
   overflow-x: hidden;
 }
 
