@@ -177,12 +177,3 @@ textarea {
 #mainboxtitle {
   font-size: var(--sizeheading);
 }
-@media only screen and (max-width: 932px) {
-  .popup-content {
-    padding: 20px;
-    width: 50vh;
-  }
-  .contact {
-    padding: 0;
-  }
-}
