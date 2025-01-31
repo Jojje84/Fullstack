@@ -88,15 +88,30 @@ async function updateWeather() {
   try {
     // Hämta väderdata från Visual Crossing API
     const response = await fetch(
-      "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/stockholm?unitGroup=metric&include=hours%2Cdays&key=YESGH5L5RFTW8JE53VQFJKAWE&contentType=json"
+      "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/stockholm?unitGroup=metric&include=hours%2Cdays&key=YESGH5L5RFTW8JE53VQFJKAWE&contentType=json",
+      {
+        headers: {
+          Accept: "application/json",
+        },
+      }
     );
 
     if (!response.ok) {
       throw new Error("Failed to fetch weather data");
     }
 
-    const data = await response.json();
+    let data;
 
+    try {
+      // Läser svaret som en arraybuffer och konverterar till UTF-8
+      const buffer = await response.arrayBuffer();
+      const decoder = new TextDecoder("utf-8");
+      const jsonString = decoder.decode(buffer);
+      data = JSON.parse(jsonString); // Parsar JSON manuellt
+    } catch (decodeError) {
+      console.warn("UTF-8 decoding warning ignored:", decodeError);
+      return; // Stoppa om vi inte kan parsa JSON
+    }
     // Uppdatera HTML-element med väderdata
     document.getElementById("location").textContent = data.resolvedAddress;
     document.getElementById(
@@ -123,8 +138,9 @@ async function updateWeather() {
 // Kör funktionen när sidan laddas
 document.addEventListener("DOMContentLoaded", updateWeather);
 
+//dark mode
 
-const checkbox = document.getElementById("checkbox")
-        checkbox.addEventListener("change", () => {
-            document.body.classList.toggle("dark-mode")
-        })
+const checkbox = document.getElementById("checkbox");
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+});
