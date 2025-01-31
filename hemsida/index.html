@@ -2,11 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google" content="notranslate" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="google"
+      content="notranslate"
+    />
     <title>Presentation - Jorge Avila</title>
-    <link rel="shortcut icon" href="assets/fav/icon.jpeg" type="image/x-icon" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/fav/icon.jpeg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="css/main.css"
+    />
   </head>
 
   <body>
@@ -32,7 +45,11 @@
       <!-- väder app -->
       <span id="weather-title">Weather</span>
       <div class="weather-box">
-        <span><img id="icon" alt="Weather Icon" /></span>
+        <span
+          ><img
+            id="icon"
+            alt="Weather Icon"
+        /></span>
         <div class="weather-container">
           <p id="location"></p>
           <p id="temperature"></p>
@@ -60,9 +77,16 @@
       <button onclick="openpopupcontact()">Contact</button>
     </nav>
     <!-- popupp om mig -->
-    <div id="popup-aboutme" class="popup">
+    <div
+      id="popup-aboutme"
+      class="popup"
+    >
       <div class="popup-content">
-        <button class="close-btn" onclick="closePopupAboutMe()">x</button>
+        <button
+          class="close-btn"
+          onclick="closePopupAboutMe()"
+          >x</button
+        >
         <br />
         <p id="mainboxtitle">About me</p>
         <hr />
@@ -84,9 +108,16 @@
       </div>
     </div>
     <!-- popupp kontakta mig-->
-    <div id="popup-contact" class="popup">
+    <div
+      id="popup-contact"
+      class="popup"
+    >
       <div class="popup-content">
-        <button class="close-btn" onclick="closePopupContact()">x</button>
+        <button
+          class="close-btn"
+          onclick="closePopupContact()"
+          >x</button
+        >
         <br />
         <p id="mainboxtitle">Contact me</p>
         <p>
@@ -102,7 +133,11 @@
         </p>
         <br />
         <div class="contact">
-          <form action="mailto:jorgeavilas@icloud.com" method="post" enctype="text/plain">
+          <form
+            action="mailto:jorgeavilas@icloud.com"
+            method="post"
+            enctype="text/plain"
+          >
             <div class="form-firstrow">
               <!-- Förnamn -->
               <input
@@ -125,13 +160,30 @@
             </div>
             <div class="form-secondrow">
               <!-- email -->
-              <input type="email" id="email" name="email" placeholder="Your email" required autocomplete="email" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email"
+                required
+                autocomplete="email"
+              />
             </div>
             <!-- meddelande -->
-            <textarea name="message" id="message" placeholder="Write something..." required> </textarea>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Write something..."
+              required
+            >
+            </textarea>
 
             <!-- knappen skicka -->
-            <button type="submit" class="button">Send</button>
+            <button
+              type="submit"
+              class="button"
+              >Send</button
+            >
           </form>
         </div>
       </div>
@@ -140,8 +192,16 @@
       <!-- Första wrapper -->
       <div class="main-content-wrapper">
         <div class="dark-white">
-          <input type="checkbox" class="checkbox" id="checkbox" aria-label="Byt mellan mörkt och ljust läge" />
-          <label for="checkbox" class="checkbox-label">
+          <input
+            type="checkbox"
+            class="checkbox"
+            id="checkbox"
+            aria-label="Byt mellan mörkt och ljust läge"
+          />
+          <label
+            for="checkbox"
+            class="checkbox-label"
+          >
             <i class="bi bi-moon-fill"></i>
             <i class="bi bi-sun-fill"></i>
             <span class="ball"></span>
@@ -151,7 +211,11 @@
         <section id="main"></section>
         <div class="intro-bild">
           <!-- foto -->
-          <img class="foto" src="assets/foto/profil.jpg" alt="profil" />
+          <img
+            class="foto"
+            src="assets/foto/profil.jpg"
+            alt="profil"
+          />
         </div>
         <div class="intro-section">
           <p id="mainboxtitle">Hi, I am Jorge Avila</p>
@@ -164,22 +228,48 @@
             In my free time, I enjoy exploring new places and learning about new technologies. I strongly believe in
             continuous learning and growth, and I strive to make a positive impact wherever I go.
           </p>
-          <p id="texthead" class="messagetext">Do you want to now more, please klick under!!!</p>
+          <p
+            id="texthead"
+            class="messagetext"
+            >Do you want to now more, please klick under!!!</p
+          >
           <br />
 
-          <a href="javascript:void(0)" onclick="openpopupaboutme()" class="link-btn">About me</a>
+          <a
+            href="javascript:void(0)"
+            onclick="openpopupaboutme()"
+            class="link-btn"
+            >About me</a
+          >
           <br />
           <br />
-          <a href="javascript:void(0)" onclick="openpopupcontact()" class="link-btn">Contact me</a>
+          <a
+            href="javascript:void(0)"
+            onclick="openpopupcontact()"
+            class="link-btn"
+            >Contact me</a
+          >
         </div>
 
         <!-- Footer -->
         <div class="footer-wrapper">
           <div class="footer-up">
-            <img src="assets/logos/facebook.png" alt="Facebook" />
-            <img src="assets/logos/linkedin.png" alt="Linkedin" />
-            <img src="assets/logos/youtube.png" alt="Youtube" />
-            <img src="assets/logos/instagram.png" alt="instagram" />
+            <img
+              src="assets/logos/facebook.png"
+              alt="Facebook"
+            />
+            <img
+              src="assets/logos/linkedin.png"
+              alt="Linkedin"
+            />
+            <img
+              src="assets/logos/youtube.png"
+              alt="Youtube"
+            />
+            <img
+              src="assets/logos/instagram.png"
+              alt="instagram"
+            />
           </div>
           <div class="footer-down">
             <p id="texthead">
@@ -197,7 +287,10 @@
         <!-- Tidslinje -->
         <section>
           <!-- Kompetenser -->
-          <div id="skills" class="label">
+          <div
+            id="skills"
+            class="label"
+          >
             <h3>Skills</h3>
           </div>
           <ul class="skills">
@@ -210,7 +303,10 @@
         </section>
         <section>
           <!-- tidslinje plats -->
-          <div id="experience" class="label">
+          <div
+            id="experience"
+            class="label"
+          >
             <h3>Experience</h3>
           </div>
           <div class="timeline">
@@ -305,7 +401,10 @@
               </div>
             </div>
           </div>
-          <div id="education" class="label">
+          <div
+            id="education"
+            class="label"
+          >
             <h3>Education</h3>
           </div>
           <div class="place">
