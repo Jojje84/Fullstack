@@ -46,12 +46,6 @@
     color: var(--input-color);
     transition: background 0.3s, color 0.3s;
   }
-
-  .dark-mode {
-    --bg-color: black;
-    --input-color: var(--dark-input-color);
-    --backgrounddark: #797c7e;
-    --backgroundblue: #51575c;
-    --hovercolor: rgba(63, 67, 70, 0.8); /* mobile-nav hover */
-  }
+  
+  
 }

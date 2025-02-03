@@ -9,6 +9,15 @@
 
 @import url("nav.css"); /* meny för både mobil och tablet  */
 
+/* darkmode css */
+.dark-mode {
+  --bg-color: black;
+  --input-color: var(--dark-input-color);
+  --backgrounddark: #797c7e;
+  --backgroundblue: #51575c;
+  --hovercolor: rgba(63, 67, 70, 0.8); /* mobile-nav hover */
+}
+
 /* Container */
 
 * {
