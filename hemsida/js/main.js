@@ -76,36 +76,18 @@ function zeroPadding(num, digit) {
 }
 
 //Väder api
-async function updateWeather() {
+async function Weather() {
   try {
-    // Hämta väderdata från Visual Crossing API
     const response = await fetch(
-      "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/stockholm?unitGroup=metric&include=hours%2Cdays&key=YESGH5L5RFTW8JE53VQFJKAWE&contentType=json",
-      {
-        headers: {
-          Accept: "application/json",
-        },
-      }
+      "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/stockholm?unitGroup=metric&include=hours%2Cdays&key=YESGH5L5RFTW8JE53VQFJKAWE&contentType=json"
     );
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch weather data");
-    }
-
-    let data;
-
-    try {
-      // Läser svaret som en arraybuffer och konverterar till UTF-8
-      const buffer = await response.arrayBuffer();
-      const decoder = new TextDecoder("utf-8");
-      const jsonString = decoder.decode(buffer);
-      data = JSON.parse(jsonString); // Parsar JSON manuellt
-    } catch (decodeError) {
-      console.warn("UTF-8 decoding warning ignored:", decodeError);
-      return; // Stoppa om vi inte kan parsa JSON
-    }
-    // Uppdatera HTML-element med väderdata
+    const data = await response.json();
+    console.log(data);
+    // Uppdaterar textinnehåll för platsen
     document.getElementById("location").textContent = data.resolvedAddress;
+
+    // Uppdaterar temperatur och beskrivning
     document.getElementById("temperature").textContent = `${data.days[0].temp}°C`;
     document.getElementById("description").textContent = data.days[0].description;
 
@@ -120,12 +102,11 @@ async function updateWeather() {
     // Uppdatera ikonen i HTML
     document.getElementById("icon").src = iconUrl;
   } catch (error) {
-    console.error("Error fetching weather data:", error);
+    console.error("Fel vid hämtning av väderdata:", error);
   }
 }
-
 // Kör funktionen när sidan laddas
-document.addEventListener("DOMContentLoaded", updateWeather);
+document.addEventListener("DOMContentLoaded", Weather);
 
 //dark mode
 

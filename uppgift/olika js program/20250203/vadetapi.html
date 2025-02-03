@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A sample HTML page for various JavaScript programs." />
+    <meta name="author" content="Jorge" />
+    <title>Vad Etapi</title>
+  </head>
+  <body> </body>
+  <script>
+    async function Weather() {
+      try {
+        const response = await fetch(
+          "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/stockholm?unitGroup=metric&include=hours%2Cdays&key=YESGH5L5RFTW8JE53VQFJKAWE&contentType=json"
+        );
+
+        const data = await response.json();
+        console.log(data);
+
+        document.body.innerHTML = `
+      <h1 id="location">${data.resolvedAddress}</h1>
+      <p id="temperature">${data.days[0].temp}°C</p>
+      <p id="description">${data.days[0].description}</p>
+      <img id="icon" src="icons/${data.days[0].icon}.svg" alt="${data.days[0].icon}" />
+    `;
+      } catch (error) {
+        console.error("Fel vid hämtning av väderdata:", error);
+      }
+    }
+
+    // Kör funktionen
+    Weather();
+  </script>
+</html>
