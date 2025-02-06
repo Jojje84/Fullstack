@@ -8,13 +8,14 @@ body {
   margin: 0;
   font-family: "Euclid Circular A", "Poppins";
   background: #000000;
+  max-width: 900vw;
+  max-height: 500vh;
 }
 
 nav {
   position: fixed;
   z-index: 4;
-  top: 10%;
-  left: 0;
+  top: 9%;
   translate: 0 -100px;
   display: flex;
   align-items: center;
@@ -82,6 +83,7 @@ nav > h1 {
   box-shadow: 0 50px 100px rgb(0 0 0 / 30%);
 }
 
+
 .banner h2 {
   margin: 0 0 10px;
   font-size: 60px;
@@ -104,6 +106,7 @@ main {
   padding: 0 10% 50px;
   font-size: 30px;
 }
+
 
 main p {
   margin: 0 0 100px;
