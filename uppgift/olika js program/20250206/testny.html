@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A test HTML file for various JavaScript programs." />
+    <meta name="author" content="Jorge" />
+    <title>Test HTML File</title>
+  </head>
+  <body>
+    <div id="status"></div>
+  </body>
+
+  <script>
+    fetch("https://run.mocky.io/v3/d857a915-e1f5-4f6b-9623-62f00bce570b")
+      .then((response) => {
+        if (condition) {
+          throw new Error("Response status: " + response.status);
+        }
+        return response;
+      })
+      .then((data) => data.json())
+      .then((hej) => {
+        const enity = document.getElementById("Status");
+        enity.textContent = hej["success"];
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  </script>
+</html>
