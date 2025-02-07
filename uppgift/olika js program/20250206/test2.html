@@ -19,21 +19,27 @@
 
     <script>
       const searchInput = document.getElementById("searchInput");
-      let Timer = setTimeout(timer => {
-          fetch('http://localhost/').then(response => {
+      let Timer; // Deklarera Timer utanför för att kunna rensa det
+
+      searchInput.addEventListener("keyup", () => {
+        clearTimeout(Timer); // Rensa föregående timeout
+
+        Timer = setTimeout(() => {
+          // Starta en ny timeout på 500ms
+          fetch("http://localhost/")
+            .then((response) => {
               if (!response.ok) {
-                  throw new Error("aj");
+                throw new Error("aj");
               }
               return response.json();
-            }).then(data => {
-                  console.log(data);
-            }).catch(error => {
-                  console.error(error);
             })
-      }, 500);
-      Input.addEventListener("keyup", () => {
-          clearTimeout(Timer);
-          timer.start();
+            .then((data) => {
+              console.log(data);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }, 500);
       });
     </script>
   </body>
