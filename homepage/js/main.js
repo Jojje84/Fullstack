@@ -17,15 +17,7 @@ function closePopupContact() {
 }
 
 //dagar hälsning
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const today = new Date().getDay();
 document.getElementById("day").textContent = days[today];
 
@@ -84,26 +76,20 @@ function zeroPadding(num, digit) {
 }
 
 //Väder api
-async function updateWeather() {
+async function Weather() {
   try {
-    // Hämta väderdata från Visual Crossing API
     const response = await fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/stockholm?unitGroup=metric&include=hours%2Cdays&key=YESGH5L5RFTW8JE53VQFJKAWE&contentType=json"
     );
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch weather data");
-    }
-
     const data = await response.json();
-
-    // Uppdatera HTML-element med väderdata
+    console.log(data);
+    // Uppdaterar textinnehåll för platsen
     document.getElementById("location").textContent = data.resolvedAddress;
-    document.getElementById(
-      "temperature"
-    ).textContent = `${data.days[0].temp}°C`;
-    document.getElementById("description").textContent =
-      data.days[0].description;
+
+    // Uppdaterar temperatur och beskrivning
+    document.getElementById("temperature").textContent = `${data.days[0].temp}°C`;
+    document.getElementById("description").textContent = data.days[0].description;
 
     // Hämta ikonnamn från API
     const icon = data.days[0].icon; // T.ex. "partly-cloudy-day"
@@ -116,15 +102,15 @@ async function updateWeather() {
     // Uppdatera ikonen i HTML
     document.getElementById("icon").src = iconUrl;
   } catch (error) {
-    console.error("Error fetching weather data:", error);
+    console.error("Fel vid hämtning av väderdata:", error);
   }
 }
-
 // Kör funktionen när sidan laddas
-document.addEventListener("DOMContentLoaded", updateWeather);
+document.addEventListener("DOMContentLoaded", Weather);
 
+//dark mode
 
-const checkbox = document.getElementById("checkbox")
-        checkbox.addEventListener("change", () => {
-            document.body.classList.toggle("dark-mode")
-        })
+const checkbox = document.getElementById("checkbox");
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+});

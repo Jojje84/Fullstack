@@ -1,7 +1,5 @@
 /* notifikationen */
 
-
-
 .overlay {
   position: absolute;
   top: 0;
@@ -28,7 +26,6 @@
   cursor: pointer;
   transition: background-color 0.3s;
   margin-top: 15px;
-  
 }
 .btn-primary:hover {
   background: #4d4d4d;
@@ -110,6 +107,7 @@
   align-items: center; /* Vertikal centrering */
   justify-content: flex-start; /* Justerar ikon och text horisontellt */
   gap: 20px; /* Lägger lite mellanrum mellan ikon och text */
+
 }
 
 .weather-container {
@@ -117,13 +115,14 @@
   flex-direction: column;
   justify-content: flex-start; /* Centrerar texten vertikalt */
   text-align: flex-start; /* Alternativt använd `center` för centrerad text */
-  gap: 0px;
+  gap: 5px;
 }
 #location,
 #temperature,
 #description {
   font-size: 0.8rem;
   color: rgb(161, 159, 159);
+  text-align: center;
 }
 
 .weather-container p {
