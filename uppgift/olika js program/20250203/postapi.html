@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A webpage to send data to a public API" />
+    <meta name="author" content="Jorge" />
+    <title>Send Data to a Public API</title>
+  </head>
+  <body>
+    <form id="hej">
+      <label for="title">Titel:</label>
+      <input type="text" id="title" name="title" required /><br />
+      <label for="body">Meddelande:</label>
+      <textarea id="body" name="body" required></textarea><br />
+      <button type="submit">Skicka Inlägg</button>
+    </form> </body
+  ><!-- ladda upp -->
+  <script>
+    const formular = document.getElementById("hej");
+    console.log(formular);
+
+    formular.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const title = document.getElementById("title").value;
+      const body = document.getElementById("body").value;
+
+      fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: title,
+          body: body,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log("Success:", data))
+        .catch((error) => console.error("Error:", error));
+    });
+  </script>
+</html>

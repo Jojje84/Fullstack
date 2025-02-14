@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Test HTML file" />
+    <meta name="author" content="Jorge" />
+    <title>Test HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>USERS</h1>
+    <ul id="userList"></ul>
+  </body>
+
+  <script>
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => {
+        const userList = document.getElementById("userList");
+
+        users.forEach((user) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = user.name + " - " + user.email;
+          userList.appendChild(listItem);
+        });
+      })
+      .catch((error) => console.error(error));
+  </script>
+
+<!-- <script> ---- Alexanders kod --
+  fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => {
+          const userList = document.getElementById("user-list");
+          data.forEach((user) => {
+              const li = document.createElement("li");
+              li.innerHTML = 
+                  "<span>" + user.name + "</span><span> " + user.email + "</span>";
+              userList.appendChild(li);
+          });
+      });
+</script> -->
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uppgift 3 - Fördröjt GET-anrop</title>
+  </head>
+  <body>
+    <h1>Sök med fördröjt GET-anrop</h1>
+
+    <!-- Input-fält -->
+    <form id="searchForm">
+      <label for="searchInput">Skriv något:</label>
+      <input type="text" id="searchInput" placeholder="Skriv något här..." />
+    </form>
+
+    <!-- Resultatvisning -->
+    <div id="result"></div>
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      let Timer; // Deklarera Timer utanför för att kunna rensa det
+
+      searchInput.addEventListener("keyup", () => {
+        clearTimeout(Timer); // Rensa föregående timeout
+
+        Timer = setTimeout(() => {
+          // Starta en ny timeout på 500ms
+          fetch("http://localhost/")
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("aj");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              console.log(data);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }, 500);
+      });
+    </script>
+  </body>
+</html>

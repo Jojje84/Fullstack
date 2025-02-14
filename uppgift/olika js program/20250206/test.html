@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A test HTML file with meta tags and a script." />
+    <title>Test HTML</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+
+    <div id="container"></div>
+    <script>
+      //   async function getData() {
+      //     const url = 'https://run.mocky.io/v3/d857a915-e1f5-4f6b-9623-62f00bce570b';
+      //     try {
+      //       const response = await fetch(url);
+      //       if (!response.ok) {
+      //         throw new Error(`Response status: ${response.status}`);
+      //       }
+
+      //       const json = await response.json();
+      //       console.log(json);
+      //     } catch (error) {
+      //       console.error(error.message);
+      //     }
+      //   }
+      //   getData();
+
+      const container = document.getElementById("container");
+      const button = document.createElement("button");
+      button.textContent = "Byt bild";
+
+      const image = document.createElement("img");
+      image.src = "https://picsum.photos/200/300";
+      image.alt = "Placeholder bild";
+
+      container.appendChild(button);
+      container.appendChild(image);
+
+      button.addEventListener('click', () => {
+        image.src = "https://picsum.photos/300/400";
+        image.alt = "Ny placeholder bild";
+      });
+    </script>
+  </body>
+</html>
