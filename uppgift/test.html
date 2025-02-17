@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Info</title>
+    <script src="olika js program/api.js"></script>
   </head>
   <style>
     #icon {
@@ -23,6 +24,68 @@
       <p id="description"></p>
       <img id="icon" alt="Weather Icon" />
     </div>
-    <script src="olika js program/api.js"></script>
+
+    <h1>Beräkna Moms</h1>
+
+    <form id="momsForm">
+      <label for="pris">Lånevolym (SEK):</label>
+      <input type="number" id="pris" step="0.01" required />
+      <br />
+      <br />
+
+      <label for="momsProcent">Momsprocent (%):</label>
+      <input type="number" id="momsProcent" step="0.01" required />
+      <br />
+      <br />
+
+      <label for="antalAr">Antal år:</label>
+      <input type="number" id="antalAr" required />
+      <br />
+      <br />
+
+      <button type="submit">Beräkna Totalpris</button>
+    </form>
+
+    <h2>Resultat</h2>
+    <p id="resultat">Totalpris:</p>
+
+    <script>
+      function beraknaMomsOchTillvaxt(pris, momsProcent, antalAr) {
+        // Kontrollera att inmatade värden är giltiga
+        if (isNaN(pris) || isNaN(momsProcent) || isNaN(antalAr)) {
+          return "Vänligen ange giltiga tal för pris, momsprocent och antal år.";
+        }
+
+        let resultat = "";
+
+        // Beräkna moms för varje år
+        for (let i = 1; i <= antalAr; i++) {
+          // Beräkna moms för varje år
+          const moms = (pris * momsProcent) / 100;
+          const totalPris = pris + moms;
+
+          // Visa resultat för varje år
+          resultat += `År ${i} - Moms: ${moms.toFixed(2)} SEK - Totalt pris: ${totalPris.toFixed(2)} SEK<br/>`;
+
+          // Öka priset för nästa år baserat på tillväxt eller annan logik
+          // Exempel: Lägg till en ökning av priset (t.ex. 5% per år)
+          pris *= 1.05; // Här använder vi 5% ökning per år
+        }
+
+        return resultat;
+      }
+
+      // Lyssna på formulärets inskickning
+      document.getElementById("momsForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Förhindra att formuläret skickas och sidan laddas om
+
+        const pris = parseFloat(document.getElementById("pris").value);
+        const momsProcent = parseFloat(document.getElementById("momsProcent").value);
+        const antalAr = parseFloat(document.getElementById("antalAr").value);
+
+        const resultat = beraknaMomsOchTillvaxt(pris, momsProcent, antalAr);
+        document.getElementById("resultat").innerHTML = resultat;
+      });
+    </script>
   </body>
 </html>
