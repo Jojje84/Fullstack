@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV</title>
+    <style>
+      @media (max-width: 926px) {
+        /* Anpassa stil för mobilversionen */
+        body {
+          background-color: grey;
+          margin: 0px;
+          width: 100%;
+        }
+        .container {
+          display: flex;
+          flex-direction: column;
+          margin: 20px;
+        }
+        #foto {
+          text-align: center;
+          margin-top: 20%;
+        }
+        #foto img {
+          width: 35%;
+          height: 50%;
+          border-radius: 50%;
+        }
+        #text {
+          text-align: center;
+        }
+        #text hr {
+          width: 50%;
+          border: none;
+          border-top: 1px dotted white;
+          opacity: 0.5;
+        }
+
+        .container2 {
+          display: flex;
+          flex-direction: column;
+          background-color: #8c9ec2;
+          width: 100vw;
+          padding: 0px 10px;
+        }
+
+        #headers {
+          display: flex;
+          align-items: center;
+        }
+        #headers h3 {
+          margin-right: 10px;
+          white-space: nowrap;
+          margin-bottom: 0px;
+        }
+        #headers hr {
+          flex-grow: 1;
+          margin: 15px 20px 0px 0px;
+          border: 0;
+          border-top: 2px dotted white;
+          border-bottom: 2px dotted white;
+          opacity: 0.5;
+          height: 2px;
+          width: 100%;
+        }
+
+        #icon-container {
+          display: flex;
+          gap: 15px;
+          margin-top: 15px;
+        }
+
+        .icon-box {
+          background: #e8e8e8; /* Ljus bakgrund */
+          padding: 15px;
+          border-radius: 12px; /* Rundade hörn */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 25px;
+          height: 25px;
+          position: relative;
+          box-shadow: 2px 2px rgb(204, 202, 202); /* Skugga */
+          border: 2px solid rgba(0, 0, 0, 0.2); /* Tunn svart kant */
+          transition: transform 0.2s ease-in-out;
+        }
+        .icon-box img {
+          width: 40px;
+          height: 40px;
+          filter: contrast(1.2); /* Förbättra färgen på ikonerna */
+        }
+
+        .icon-box:hover {
+          transform: scale(1.1); /* Förstora ikonen vid hover */
+        }
+        .container3 {
+          display: flex;
+          flex-direction: column;
+          background-color: #8c9ec2;
+          width: 100vw;
+          padding-left: 10px;
+        }
+        #studys {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          margin-top: -20px;
+          padding-left: 10px;
+        }
+        #studys h5 {
+          margin: -15px 0;
+        }
+        #studys p {
+          padding: 10px 0px 1px;
+        }
+        #line {
+          border: 1px dotted white;
+          opacity: 0.5;
+          height: 1px;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div id="foto">
+          <img src="avatar.png" alt="Bild på mig" />
+        </div>
+        <div id="text">
+          <h1>Jorge Avila</h1>
+          <h4>Full Stack Development</h4>
+          <hr />
+          <p>
+            Jag heter Jorge Avila och är från Stockholm. Jag har precis tagit examen från Stockholms universitet där jag
+            läst till systemvetare. Jag har alltid varit intresserad av teknik och programmering och har under mina
+            studier lärt mig flera olika programmeringsspråk. Jag har även jobbat extra som webbutvecklare under
+            studietiden. Nu är jag redo att ta steget ut i arbetslivet och söker därför jobb som systemutvecklare.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container2">
+        <div id="headers">
+          <h3>Skills</h3>
+          <hr />
+        </div>
+
+        <div id="icon-container">
+          <div class="icon-box">
+            <img src="html.svg" alt="HTML" />
+          </div>
+          <div class="icon-box">
+            <img src="css.svg" alt="CSS" />
+          </div>
+          <div class="icon-box">
+            <img src="js.svg" alt="JavaScript" />
+          </div>
+          <div class="icon-box">
+            <img src="python.svg" alt="Python" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container3">
+        <div id="headers">
+          <h3>Education</h3>
+          <hr />
+        </div>
+        <div id="icon-container">
+          <div class="icon-box">
+            <img src="fu.svg" alt="Företagsuniversitet" />
+          </div>
+
+          <div id="studys">
+            <h4>Företagsuniversitet</h4>
+            <h5>October</h5>
+            <p>
+              Full Stack Development
+              <br />
+              verifid
+            </p>
+          </div>
+        </div>
+        <hr id="line" />
+        <div id="icon-container">
+          <div class="icon-box">
+            <img src="book.svg" alt="Företagsuniversitet" />
+          </div>
+
+          <div id="studys">
+            <h4>Företagsuniversitet</h4>
+            <h5>October</h5>
+            <p>
+              Full Stack Development
+              <br />
+              verifid
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
