@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <h1>Svara på frågor</h1>
+
+        <label for="name">Vad heter du?</label>
+        <input type="text" id="name" placeholder="Skriv ditt namn" />
+        <br>
+        <label for="age">Hur gammal är du?</label>
+        <input type="number" id="age" placeholder="Skriv din ålder" />
+        <br>
+        <label for="city">Vilken stad bor du i?</label>
+        <input type="text" id="city" placeholder="Skriv din stad" />
+        <br>
+        <label for="country">Vilket land kommer du ifrån?</label>
+        <input type="text" id="country" placeholder="Skriv ditt land" />
+        <br>
+        <br>
+        <button onclick="saveform()">Spara</button>
+        <p id="answerDisplay"></p>
+    </form>
+
+    <script>
+        
+      const form = document.getElementById("form");
+      const answerDisplay = document.getElementById("answerDisplay");
+
+      answerDisplay.textContent = `Hej ${localStorage.getItem("name")}, du är ${localStorage.getItem("age")} år gammal och bor i ${localStorage.getItem("city")}, ${localStorage.getItem("country")}.`;
+
+      function saveform() {
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const city = document.getElementById("city").value;
+        const country = document.getElementById("country").value;
+
+        localStorage.setItem("name", name);
+        localStorage.setItem("age", age);
+        localStorage.setItem("city", city);
+        localStorage.setItem("country", country); 
+      }
+      window.onbeforeunload = function() {
+        return "Data will be lost if you leave the page, are you sure?";
+      };
+ 
+
+
+
+
+    </script>
+
+</body>
+</html>
