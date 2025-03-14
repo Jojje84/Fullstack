@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favoritfärg</title>
+  </head>
+  <body>
+    <h1>Min favoritfärg</h1>
+    <input type="text" id="colorInput" placeholder="Skriv din favoritfärg" />
+    <button onclick="saveFavoriteColor()">Spara favoritfärg</button>
+    <button onclick="remove()">radera färg</button>
+
+    <hr />
+    <p id="favoriteColorDisplay"></p>
+
+
+    <hr>
+    <br>
+    <br>
+    <hr>
+
+    
+   
+
+    <script>
+      const colorInput = document.getElementById("colorInput");
+      const favoriteColorDisplay = document.getElementById("favoriteColorDisplay");
+
+      favoriteColorDisplay.textContent = localStorage.getItem("favoriteColor");
+
+      function saveFavoriteColor() {
+        const favoriteColor = colorInput.value;
+        localStorage.setItem("favoriteColor", favoriteColor);
+        favoriteColorDisplay.textContent = favoriteColor;
+      }
+      function remove() {
+        localStorage.removeItem("favoriteColor");
+        favoriteColorDisplay.textContent = "";
+      }
+
+      
+    </script>
+  </body>
+</html>
